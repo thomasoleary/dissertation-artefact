@@ -6,24 +6,35 @@ public class FurnitureObject : ScriptableObject
 {
 
     public string furnitureName;
+
+    public AgentState state;
     public Sides[] sides;
 
     //public FurnitureObject[] potentialParents;
+
+    public Parent[] potentialParents;
     
 }
 [Serializable]
 public struct Sides
 {
     public AxisDirections axis;
-    
+
     [Range(0.0f, 10.0f)]
     public float distance;
 
-    //public int numberOfChildren;
+    public float clearanceSpace;
 
-    //public float clearanceSpace;
-
+    public int numberOfChildren;
+    
     public LayerMask layers;
+}
+
+[Serializable]
+public struct Parent
+{
+    public FurnitureObject parent;
+    public AxisDirections placeableSide;
 }
 
 public enum AxisDirections
@@ -34,4 +45,12 @@ public enum AxisDirections
     RIGHT,
     FORWARD,
     BACK
+}
+
+public enum AgentState
+{
+    SEARCH,
+    ARRANGE,
+    REST,
+    SLEEP
 }
