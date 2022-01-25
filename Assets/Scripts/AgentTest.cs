@@ -47,10 +47,10 @@ public class AgentTest : MonoBehaviour
     {
         vectorAxis[0] = Vector3.up;
         vectorAxis[1] = Vector3.down;
-        vectorAxis[2] = Vector3.left;
-        vectorAxis[3] = Vector3.right;
-        vectorAxis[4] = Vector3.forward;
-        vectorAxis[5] = Vector3.back;
+        vectorAxis[2] = Vector3.forward;
+        vectorAxis[3] = Vector3.back;
+        vectorAxis[4] = Vector3.right;
+        vectorAxis[5] = Vector3.left;
     }
 
 
