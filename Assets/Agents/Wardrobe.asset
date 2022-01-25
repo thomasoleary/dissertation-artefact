@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99008ebdd092a6546ba5427df633d2bd, type: 3}
+  m_Name: Wardrobe
+  m_EditorClassIdentifier: 
+  furnitureName: Wardrobe
+  state: 0
+  sides:
+  - axis: 0
+    distance: 1
+    clearanceSpace: 0
+    numberOfChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+  - axis: 1
+    distance: 1
+    clearanceSpace: 0
+    numberOfChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+  - axis: 2
+    distance: 1
+    clearanceSpace: 0
+    numberOfChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+  - axis: 3
+    distance: 1
+    clearanceSpace: 0
+    numberOfChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+  - axis: 4
+    distance: 1
+    clearanceSpace: 0
+    numberOfChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+  - axis: 5
+    distance: 1
+    clearanceSpace: 0
+    numberOfChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+  potentialParents: []

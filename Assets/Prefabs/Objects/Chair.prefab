@@ -107,6 +107,8 @@ GameObject:
   - component: {fileID: 2837587349517367453}
   - component: {fileID: 6045426400432113261}
   - component: {fileID: 4757536001637213897}
+  - component: {fileID: 983326945919283722}
+  - component: {fileID: 5301771664157687578}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -198,3 +200,29 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+--- !u!65 &983326945919283722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757536001637213898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26644576, y: 0.8842485, z: 0.7526914}
+  m_Center: {x: -0.32829756, y: 1.0096358, z: 0.0022395253}
+--- !u!65 &5301771664157687578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757536001637213898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7050317, y: 0.17096817, z: 0.7526914}
+  m_Center: {x: 0.018104404, y: 0.65299577, z: 0.0022395253}
