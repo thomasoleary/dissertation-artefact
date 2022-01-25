@@ -7,13 +7,12 @@ public class AgentTest : MonoBehaviour
 
     [SerializeField] private FurnitureObject agent;
 
-    [HideInInspector] public Vector3[] vectorAxis = new Vector3[6];
+    private Vector3[] vectorAxis = new Vector3[6];
 
 
     // Start is called before the first frame update
     void Start()
     {
-
         InitialiseDirections();
     }
 
