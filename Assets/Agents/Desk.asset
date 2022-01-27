@@ -51,7 +51,7 @@ MonoBehaviour:
     distance: 1
     clearanceSpace: 0
     spaceForChildren: 1
-    currentChildren: 1
+    currentChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0

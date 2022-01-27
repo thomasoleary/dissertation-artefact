@@ -215,7 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 11400000, guid: 958e4bb958303ce46b4f0458dd14e2af, type: 2}
+  agentAsset: {fileID: 11400000, guid: 958e4bb958303ce46b4f0458dd14e2af, type: 2}
+  agent: {fileID: 0}
   findObjects: {fileID: 0}
 --- !u!1001 &660548936
 PrefabInstance:
@@ -449,7 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
+  agentAsset: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
+  agent: {fileID: 0}
   findObjects: {fileID: 0}
 --- !u!1 &999739594
 GameObject:
@@ -740,7 +742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 11400000, guid: d19bb2cc974f0c34d9a819f83b57b993, type: 2}
+  agentAsset: {fileID: 11400000, guid: d19bb2cc974f0c34d9a819f83b57b993, type: 2}
+  agent: {fileID: 0}
   findObjects: {fileID: 0}
 --- !u!1001 &258460482407068966
 PrefabInstance:
@@ -918,7 +921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 11400000, guid: a490cb10e0e487e48ab8babb762b9960, type: 2}
+  agentAsset: {fileID: 11400000, guid: a490cb10e0e487e48ab8babb762b9960, type: 2}
+  agent: {fileID: 0}
   findObjects: {fileID: 0}
 --- !u!1001 &884065193871360847
 PrefabInstance:
@@ -992,6 +996,17 @@ PrefabInstance:
       propertyPath: m_TagString
       value: agent
       objectReference: {fileID: 0}
+    - target: {fileID: 7142105886467850798, guid: f5539b103c41d7b4580a60ee264b5525,
+        type: 3}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142105886467850798, guid: f5539b103c41d7b4580a60ee264b5525,
+        type: 3}
+      propertyPath: agentAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c1fbad87ac79d674c9aa8c57fa212a42,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5539b103c41d7b4580a60ee264b5525, type: 3}
 --- !u!1001 &1175015401844078000
@@ -1160,7 +1175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 11400000, guid: 303622f20fb0c7f47ab4d06809526b85, type: 2}
+  agentAsset: {fileID: 11400000, guid: 303622f20fb0c7f47ab4d06809526b85, type: 2}
+  agent: {fileID: 0}
   findObjects: {fileID: 0}
 --- !u!1001 &2982991513086730768
 PrefabInstance:
@@ -1254,7 +1270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 11400000, guid: 672e7f8bd33fd4148a14497d58faca48, type: 2}
+  agentAsset: {fileID: 11400000, guid: 672e7f8bd33fd4148a14497d58faca48, type: 2}
+  agent: {fileID: 0}
   findObjects: {fileID: 0}
 --- !u!1 &5305547641582619476 stripped
 GameObject:
@@ -1274,5 +1291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 11400000, guid: fb3cd7c42a31a834d9d84b5d245646f3, type: 2}
+  agentAsset: {fileID: 11400000, guid: fb3cd7c42a31a834d9d84b5d245646f3, type: 2}
+  agent: {fileID: 0}
   findObjects: {fileID: 0}

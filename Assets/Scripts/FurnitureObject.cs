@@ -27,6 +27,12 @@ public class FurnitureObject : ScriptableObject
     public Parent[] potentialParents;
 
     public FurnitureObject currentParent;
+
+
+    public FurnitureObject GetInstance()
+    {
+        return Instantiate(this);
+    }
     
 }
 

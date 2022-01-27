@@ -5,6 +5,7 @@ using UnityEngine;
 public class AgentTest : MonoBehaviour
 {
 
+    public FurnitureObject agentAsset;
     public FurnitureObject agent;
 
     private Vector3[] vectorAxis = new Vector3[6];
@@ -15,12 +16,15 @@ public class AgentTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        agent = agentAsset.GetInstance();
+
+
         GameObject fObj = GameObject.FindGameObjectWithTag("find");
         findObjects = fObj.GetComponent<findobjects>() as findobjects;
 
         InitialiseDirections();
 
-        //OtherSearch();
+        OtherSearch();
     }
 
     // Update is called once per frame
