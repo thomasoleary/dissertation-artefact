@@ -9,6 +9,8 @@ TagManager:
   - wall2
   - wall3
   - wall4
+  - agent
+  - find
   layers:
   - Default
   - TransparentFX

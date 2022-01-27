@@ -15,20 +15,21 @@ public class FurnitureObject : ScriptableObject
             sides[(int)v].distance = 1.0f;
         }
 
-        s_DefaultEnumValues = new ReadOnlyCollection<Sides>(sides);
+        defaultEnumValues = new ReadOnlyCollection<Sides>(sides);
     }
-    static readonly ReadOnlyCollection<Sides> s_DefaultEnumValues;
+    static readonly ReadOnlyCollection<Sides> defaultEnumValues;
 
     public string furnitureName;
 
     public AgentState state;
-    public Sides[] sides = s_DefaultEnumValues.ToArray();
-
-    //public FurnitureObject[] potentialParents;
+    public Sides[] sides = defaultEnumValues.ToArray();
 
     public Parent[] potentialParents;
+
+    public FurnitureObject currentParent;
     
 }
+
 [Serializable]
 public struct Sides
 {
@@ -39,7 +40,8 @@ public struct Sides
 
     public float clearanceSpace;
 
-    public int numberOfChildren;
+    public int spaceForChildren;
+    public int currentChildren;
 
     public LayerMask layers;
 }
@@ -48,7 +50,8 @@ public struct Sides
 public struct Parent
 {
     public FurnitureObject parent;
-    public AxisDirections placeableSide;
+    public AxisDirections sideOnParent;
+    public AxisDirections sideOnAgent;
 }
 
 public enum AxisDirections

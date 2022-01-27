@@ -5,15 +5,22 @@ using UnityEngine;
 public class AgentTest : MonoBehaviour
 {
 
-    [SerializeField] private FurnitureObject agent;
+    public FurnitureObject agent;
 
     private Vector3[] vectorAxis = new Vector3[6];
+
+    [SerializeField] private findobjects findObjects;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject fObj = GameObject.FindGameObjectWithTag("find");
+        findObjects = fObj.GetComponent<findobjects>() as findobjects;
+
         InitialiseDirections();
+
+        //OtherSearch();
     }
 
     // Update is called once per frame
@@ -33,6 +40,45 @@ public class AgentTest : MonoBehaviour
                 Debug.DrawRay(transform.position, (transform.rotation * GetAxis(agent.sides[i].axis)) * agent.sides[i].distance, Color.green);
 
                 //Debug.Log(gameObject.name + " " + agent.sides[i].axis.ToString() + " is hitting: " + groundHit.collider.name);
+            }
+        }
+    }
+
+    // find suitable parent
+    void Search()
+    {
+        foreach (AgentTest at in findObjects.agentTests)
+        {
+            for(int i = 0; i < agent.potentialParents.Count(); i++)
+            {
+                if (agent.potentialParents[i].parent == at.agent)
+                {
+                    Debug.Log(agent + " has found parent: " + at.agent);
+                }
+            }
+
+        }
+    }
+
+    void OtherSearch()
+    {
+        for (int i = 0; i < agent.potentialParents.Count(); i++)
+        {
+            foreach (AgentTest at in findObjects.agentTests)
+            {
+                if (agent.potentialParents[i].parent == at.agent)
+                {
+                    Debug.Log(agent + " has found parent: " + at.agent);
+                    Debug.Log((int)agent.potentialParents[i].sideOnParent);
+
+                    
+                    if (at.agent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1 && at.agent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < at.agent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
+                    {
+                        agent.currentParent = at.agent;
+                        at.agent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
+                    }
+
+                }
             }
         }
     }
