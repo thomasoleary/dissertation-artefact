@@ -29,6 +29,11 @@ public class FurnitureObject : ScriptableObject
     public string furnitureName;
 
     /// <summary>
+    /// The type of furniture the object is
+    /// </summary>
+    public TypeOfFurniture typeOfFurniture;
+
+    /// <summary>
     /// The Agents state
     /// </summary>
     public AgentState state;
@@ -94,6 +99,8 @@ public struct Parent
 {
     // The type of agent the parent is
     public FurnitureObject parent;
+
+    public TypeOfFurniture parentType;
     
     // What side on the parent the agent should be placed on
     public AxisDirections sideOnParent;
@@ -125,4 +132,15 @@ public enum AgentState
     ARRANGE,
     REST,
     SLEEP
+}
+
+public enum TypeOfFurniture
+{
+    BED,
+    BEDSIDE_CABINET,
+    CHAIR,
+    DESK,
+    DRAWERS,
+    TABLE_LAMP,
+    WARDROBE
 }
