@@ -13,48 +13,56 @@ MonoBehaviour:
   m_Name: Wardrobe
   m_EditorClassIdentifier: 
   furnitureName: Wardrobe
+  typeOfFurniture: 6
   state: 0
   sides:
   - axis: 0
     distance: 1
     clearanceSpace: 0
-    numberOfChildren: 0
+    spaceForChildren: 0
+    currentChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
   - axis: 1
     distance: 1
     clearanceSpace: 0
-    numberOfChildren: 0
+    spaceForChildren: 0
+    currentChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
   - axis: 2
     distance: 1
     clearanceSpace: 0
-    numberOfChildren: 0
+    spaceForChildren: 0
+    currentChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
   - axis: 3
     distance: 1
     clearanceSpace: 0
-    numberOfChildren: 0
+    spaceForChildren: 0
+    currentChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
   - axis: 4
     distance: 1
     clearanceSpace: 0
-    numberOfChildren: 0
+    spaceForChildren: 0
+    currentChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
   - axis: 5
     distance: 1
     clearanceSpace: 0
-    numberOfChildren: 0
+    spaceForChildren: 0
+    currentChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
   potentialParents: []
+  currentParent: {fileID: 0}

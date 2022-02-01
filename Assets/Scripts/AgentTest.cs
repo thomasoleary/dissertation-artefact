@@ -24,19 +24,21 @@ public class AgentTest : MonoBehaviour
 
     [SerializeField] private findobjects findObjects;
 
+    void Awake()
+    {
+        agent = agentAsset.GetInstance();
+        //Debug.Log(agent);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = agentAsset.GetInstance();
-
-
-        GameObject fObj = GameObject.FindGameObjectWithTag("find");
-        findObjects = fObj.GetComponent<findobjects>() as findobjects;
+        //GameObject fObj = GameObject.FindGameObjectWithTag("find");
+        //findObjects = fObj.GetComponent<findobjects>() as findobjects;
 
         InitialiseDirections();
 
-        OtherSearch();
+        AnotherSearch();
     }
 
     // Update is called once per frame
@@ -88,13 +90,31 @@ public class AgentTest : MonoBehaviour
                     Debug.Log(agent + " has found parent: " + at.agent);
                     Debug.Log((int)agent.potentialParents[i].sideOnParent);
 
-                    
+                    // if potential parent has more than 1 space for children (on specific side)
+                    // and potential parents current children is less than the space for children (on specific side)
                     if (at.agent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1 && at.agent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < at.agent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
                     {
+                        // potential parent becomes parent
                         agent.currentParent = at.agent;
+
+                        // increase the parents amount of children on side
                         at.agent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
                     }
 
+                }
+            }
+        }
+    }
+
+    void AnotherSearch()
+    {
+        for (int i = 0; i < agent.potentialParents.Count(); i++)
+        {
+            foreach (AgentTest at in findObjects.agentTests)
+            {
+                if (agent.potentialParents[i].parentType == at.agent.typeOfFurniture)
+                {
+                    Debug.Log(agent + " has found parent: " + at.agent);
                 }
             }
         }

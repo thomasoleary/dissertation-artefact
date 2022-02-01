@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BedsideCabinet
   m_EditorClassIdentifier: 
   furnitureName: Bedside Cabinet
+  typeOfFurniture: 1
   state: 0
   sides:
   - axis: 0
@@ -65,6 +66,7 @@ MonoBehaviour:
       m_Bits: 0
   potentialParents:
   - parent: {fileID: 11400000, guid: 958e4bb958303ce46b4f0458dd14e2af, type: 2}
+    parentType: 0
     sideOnParent: 2
     sideOnAgent: 3
   currentParent: {fileID: 0}

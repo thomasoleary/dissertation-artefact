@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Desk
   m_EditorClassIdentifier: 
   furnitureName: Desk
+  typeOfFurniture: 3
   state: 0
   sides:
   - axis: 0

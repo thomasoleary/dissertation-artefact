@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Table Lamp
   m_EditorClassIdentifier: 
   furnitureName: Table Lamp
+  typeOfFurniture: 5
   state: 0
   sides:
   - axis: 0
@@ -65,6 +66,7 @@ MonoBehaviour:
       m_Bits: 0
   potentialParents:
   - parent: {fileID: 11400000, guid: a490cb10e0e487e48ab8babb762b9960, type: 2}
+    parentType: 1
     sideOnParent: 0
     sideOnAgent: 1
   currentParent: {fileID: 0}
