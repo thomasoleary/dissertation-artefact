@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+    Test script to find all agents in the scene
+    This is probably the worst way I could do this right now... but hey-ho
+*/
 public class findobjects : MonoBehaviour
 {
     private GameObject[] agents;
@@ -24,11 +27,5 @@ public class findobjects : MonoBehaviour
         }
 
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

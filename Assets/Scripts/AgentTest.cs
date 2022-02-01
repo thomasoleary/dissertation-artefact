@@ -1,13 +1,25 @@
 using System;
 using System.Linq;
 using UnityEngine;
-
+/*
+    Test script where I'm putting all logic together, once it's at a decent state - I will change it into a better looking script with hopefully cleaner code :)
+    - Tom
+*/
 public class AgentTest : MonoBehaviour
 {
-
+    /// <summary>
+    /// Original SO reference, that will be instantiated
+    /// </summary>
     public FurnitureObject agentAsset;
+
+    /// <summary>
+    /// The actual Agent being refferred to (using the instantiated agentAsset)
+    /// </summary>
     public FurnitureObject agent;
 
+    /// <summary>
+    /// This array is used to match up the AxisDirections to the correct Vector3
+    /// </summary>
     private Vector3[] vectorAxis = new Vector3[6];
 
     [SerializeField] private findobjects findObjects;
@@ -64,6 +76,7 @@ public class AgentTest : MonoBehaviour
         }
     }
 
+    // The current test Search function I am using to find a potential parent
     void OtherSearch()
     {
         for (int i = 0; i < agent.potentialParents.Count(); i++)
@@ -87,11 +100,18 @@ public class AgentTest : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns an element in the vectorAxis array dependent on the AxisDirections enum
+    /// E.g. AxisDirections.UP will return Vector3.up
+    /// </summary>
     public Vector3 GetAxis(AxisDirections axis)
     {
         return vectorAxis[(int)axis];
     }
 
+    /// <summary>
+    /// Each element in the vectorAxis array being initialised with a Vector3 direction
+    /// </summary>
     public void InitialiseDirections()
     {
         vectorAxis[0] = Vector3.up;
