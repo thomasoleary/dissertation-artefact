@@ -331,8 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c58b20390e7fb142822514ee1e7c152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentTests: []
-  instantFurniture: []
+  furnitureInScene: []
 --- !u!4 &782257381
 Transform:
   m_ObjectHideFlags: 0

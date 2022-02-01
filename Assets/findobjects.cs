@@ -9,9 +9,9 @@ public class findobjects : MonoBehaviour
 {
     private GameObject[] agents;
 
-    public AgentTest[] agentTests;
+    private AgentTest[] agentTests;
 
-    public FurnitureObject[] instantFurniture;
+    public FurnitureObject[] furnitureInScene;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class findobjects : MonoBehaviour
 
         agentTests = new AgentTest[agents.Length];
 
-        instantFurniture = new FurnitureObject[agentTests.Length];
+        furnitureInScene = new FurnitureObject[agentTests.Length];
 
         int i = 0;
         foreach(GameObject agent in agents)
@@ -33,19 +33,9 @@ public class findobjects : MonoBehaviour
         int j = 0;
         foreach(AgentTest at in agentTests)
         {
-            instantFurniture[j] = at.agent;
+            furnitureInScene[j] = at.agent;
             j++;
         }
 
-        //PrintAllTypes();
-
-    }
-
-    void PrintAllTypes()
-    {
-        foreach(AgentTest at in agentTests)
-        {
-            Debug.Log(at);
-        }
     }
 }

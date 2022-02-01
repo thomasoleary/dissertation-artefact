@@ -63,7 +63,7 @@ public class AgentTest : MonoBehaviour
     }
 
     // find suitable parent
-    void Search()
+    /* void Search()
     {
         foreach (AgentTest at in findObjects.agentTests)
         {
@@ -76,10 +76,10 @@ public class AgentTest : MonoBehaviour
             }
 
         }
-    }
+    } */
 
     // The current test Search function I am using to find a potential parent
-    void OtherSearch()
+    /* void OtherSearch()
     {
         for (int i = 0; i < agent.potentialParents.Count(); i++)
         {
@@ -105,16 +105,17 @@ public class AgentTest : MonoBehaviour
             }
         }
     }
-
+ */
+    
     void AnotherSearch()
     {
         for (int i = 0; i < agent.potentialParents.Count(); i++)
         {
-            foreach (AgentTest at in findObjects.agentTests)
+            foreach (FurnitureObject fobj in findObjects.furnitureInScene)
             {
-                if (agent.potentialParents[i].parentType == at.agent.typeOfFurniture)
+                if (agent.potentialParents[i].parentType == fobj.typeOfFurniture)
                 {
-                    Debug.Log(agent + " has found parent: " + at.agent);
+                    Debug.Log(agent + " has found parent: " + fobj);
                 }
             }
         }
