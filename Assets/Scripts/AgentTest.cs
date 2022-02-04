@@ -8,6 +8,9 @@ using UnityEngine;
 */
 public class AgentTest : MonoBehaviour
 {
+
+    public string furnitureName;
+
     /// <summary>
     /// Original SO reference, that will be instantiated
     /// </summary>
@@ -29,6 +32,7 @@ public class AgentTest : MonoBehaviour
     {
         InitialiseDirections();
         agent = agentAsset.GetInstance();
+        agent.name = furnitureName;
     }
 
     // Start is called before the first frame update
@@ -116,15 +120,22 @@ public class AgentTest : MonoBehaviour
         {
             foreach (FurnitureObject fobj in findObjects.furnitureInScene)
             {
+                if (agent.currentParent)
+                    yield return null;
+
                 // if the type of furniture in the scene is the same type as a potential parent
                 if (agent.potentialParents[i].parentType == fobj.typeOfFurniture)
                 {
-                    Debug.Log(agent.name + " has found parent: " + fobj.name);
                     // find if potential parent has space for agent
-                    if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1 && fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
-                    {
-                        Debug.Log("There is space for: " + agent.name + " on " + fobj.name + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
-                    }
+                    if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1)
+                        if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
+                        {
+                            Debug.Log("There is space for: " + agent.name + " on " + fobj.name + " " + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
+
+                            fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
+                            agent.currentParent = fobj;
+                            yield return null;
+                        }
                 }
             }
         }

@@ -67,6 +67,6 @@ MonoBehaviour:
   potentialParents:
   - parent: {fileID: 11400000, guid: fb3cd7c42a31a834d9d84b5d245646f3, type: 2}
     parentType: 3
-    sideOnParent: 0
-    sideOnAgent: 0
+    sideOnParent: 4
+    sideOnAgent: 4
   currentParent: {fileID: 0}
