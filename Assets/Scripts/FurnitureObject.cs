@@ -48,6 +48,8 @@ public class FurnitureObject : ScriptableObject
     /// </summary>
     public Parent[] potentialParents;
 
+    [HideInInspector] public bool hasFoundParent = false;
+
     /// <summary>
     /// The current parent of the Agent
     /// </summary>
@@ -59,6 +61,12 @@ public class FurnitureObject : ScriptableObject
     public FurnitureObject GetInstance()
     {
         return Instantiate(this);
+    }
+
+    public virtual void Init(string furnitureName)
+    {
+        this.furnitureName = furnitureName;
+        //Debug.Log(this.furnitureName + " test init");
     }
     
 }
@@ -86,6 +94,9 @@ public struct Sides
 
     // How many current children are placed on the side
     public int currentChildren;
+
+    // If the side has max amount of children
+    public bool hasMaxChildren;
 
     // The layer that the side can raycast
     public LayerMask layers;

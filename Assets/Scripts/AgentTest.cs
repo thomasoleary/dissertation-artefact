@@ -32,7 +32,7 @@ public class AgentTest : MonoBehaviour
     {
         InitialiseDirections();
         agent = agentAsset.GetInstance();
-        agent.name = furnitureName;
+        agent.Init(furnitureName);
     }
 
     // Start is called before the first frame update
@@ -70,72 +70,30 @@ public class AgentTest : MonoBehaviour
         }
     }
 
-    // find suitable parent
-    /* void Search()
-    {
-        foreach (AgentTest at in findObjects.agentTests)
-        {
-            for(int i = 0; i < agent.potentialParents.Count(); i++)
-            {
-                if (agent.potentialParents[i].parent == at.agent)
-                {
-                    Debug.Log(agent + " has found parent: " + at.agent);
-                }
-            }
-
-        }
-    } */
-
-    // The current test Search function I am using to find a potential parent
-    /* void OtherSearch()
-    {
-        for (int i = 0; i < agent.potentialParents.Count(); i++)
-        {
-            foreach (AgentTest at in findObjects.agentTests)
-            {
-                if (agent.potentialParents[i].parent == at.agent)
-                {
-                    Debug.Log(agent + " has found parent: " + at.agent);
-                    Debug.Log((int)agent.potentialParents[i].sideOnParent);
-
-                    // if potential parent has more than 1 space for children (on specific side)
-                    // and potential parents current children is less than the space for children (on specific side)
-                    if (at.agent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1 && at.agent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < at.agent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
-                    {
-                        // potential parent becomes parent
-                        agent.currentParent = at.agent;
-
-                        // increase the parents amount of children on side
-                        at.agent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
-                    }
-
-                }
-            }
-        }
-    }
- */
     IEnumerator MoreSearch()
     {
         for (int i = 0; i < agent.potentialParents.Count(); i++)
         {
             foreach (FurnitureObject fobj in findObjects.furnitureInScene)
             {
-                if (agent.currentParent)
-                    yield return null;
-
-                // if the type of furniture in the scene is the same type as a potential parent
-                if (agent.potentialParents[i].parentType == fobj.typeOfFurniture)
+                if (!agent.hasFoundParent)
                 {
-                    // find if potential parent has space for agent
-                    if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1)
-                        if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
-                        {
-                            Debug.Log("There is space for: " + agent.name + " on " + fobj.name + " " + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
+                    // if the type of furniture in the scene is the same type as a potential parent
+                    if (agent.potentialParents[i].parentType == fobj.typeOfFurniture)
+                    {
+                        // find if potential parent has space for agent
+                        if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1)
+                            if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
+                            {
+                                //Debug.Log("There is space for: " + agent.name + " on " + fobj.name + " " + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
 
-                            fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
-                            agent.currentParent = fobj;
-                            yield return null;
-                        }
+                                fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
+                                agent.currentParent = fobj;
+                                agent.hasFoundParent = true;
+                                Debug.Log(agent.furnitureName + " has found parent & side: " + fobj.furnitureName + " " + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
+                                yield return null;
+                            }
+                    }
                 }
             }
         }
