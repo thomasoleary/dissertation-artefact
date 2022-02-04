@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 /*
@@ -26,24 +27,27 @@ public class AgentTest : MonoBehaviour
 
     void Awake()
     {
+        InitialiseDirections();
         agent = agentAsset.GetInstance();
-        //Debug.Log(agent);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject fObj = GameObject.FindGameObjectWithTag("find");
-        //findObjects = fObj.GetComponent<findobjects>() as findobjects;
+        //AnotherSearch();
 
-        InitialiseDirections();
-
-        AnotherSearch();
+        
     }
 
+    bool doOnce = false;
     // Update is called once per frame
     void Update()
     {
+        if (!doOnce)
+        {
+            StartCoroutine(MoreSearch());
+            doOnce = true;
+        }
         TestRay();
     }
 
@@ -106,19 +110,25 @@ public class AgentTest : MonoBehaviour
         }
     }
  */
-    
-    void AnotherSearch()
+    IEnumerator MoreSearch()
     {
         for (int i = 0; i < agent.potentialParents.Count(); i++)
         {
             foreach (FurnitureObject fobj in findObjects.furnitureInScene)
             {
+                // if the type of furniture in the scene is the same type as a potential parent
                 if (agent.potentialParents[i].parentType == fobj.typeOfFurniture)
                 {
-                    Debug.Log(agent + " has found parent: " + fobj);
+                    Debug.Log(agent.name + " has found parent: " + fobj.name);
+                    // find if potential parent has space for agent
+                    if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1 && fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
+                    {
+                        Debug.Log("There is space for: " + agent.name + " on " + fobj.name + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
+                    }
                 }
             }
         }
+        yield return null;
     }
 
     /// <summary>

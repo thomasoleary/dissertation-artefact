@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bed
   m_EditorClassIdentifier: 
   furnitureName: Bed
+  typeOfFurniture: 0
   state: 0
   sides:
   - axis: 0

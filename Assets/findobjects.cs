@@ -27,14 +27,8 @@ public class findobjects : MonoBehaviour
         foreach(GameObject agent in agents)
         {
             agentTests[i] = agent.GetComponent<AgentTest>() as AgentTest;
+            furnitureInScene[i] = agentTests[i].agent;
             i++;
-        }
-
-        int j = 0;
-        foreach(AgentTest at in agentTests)
-        {
-            furnitureInScene[j] = at.agent;
-            j++;
         }
 
     }
