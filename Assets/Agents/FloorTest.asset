@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99008ebdd092a6546ba5427df633d2bd, type: 3}
-  m_Name: Chair
+  m_Name: FloorTest
   m_EditorClassIdentifier: 
-  furnitureName: Chair
-  typeOfFurniture: 2
-  state: 0
+  furnitureName: FloorTest
+  typeOfFurniture: 5
+  state: 3
   sides:
   - axis: 0
     distance: 1
     clearanceSpace: 0
-    spaceForChildren: 0
+    spaceForChildren: 10
     currentChildren: 0
     hasMaxChildren: 0
     layers:
@@ -70,10 +70,7 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 0
-  potentialParents:
-  - parentType: 3
-    sideOnParent: 4
-    sideOnAgent: 4
+  potentialParents: []
   hasFoundParent: 0
   currentParent: {fileID: 0}
-  searchIndex: 5
+  searchIndex: 0

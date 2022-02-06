@@ -145,6 +145,7 @@ MonoBehaviour:
   agentAsset: {fileID: 11400000, guid: c1fbad87ac79d674c9aa8c57fa212a42, type: 2}
   agent: {fileID: 0}
   findObjects: {fileID: 782257380}
+  mesh: {fileID: 0}
 --- !u!1001 &384470684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 4678360176851190463, guid: 56d0fa9a187f1a04ea488cc4716c5d9a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678360176851190463, guid: 56d0fa9a187f1a04ea488cc4716c5d9a,
         type: 3}
@@ -246,6 +247,7 @@ MonoBehaviour:
   agentAsset: {fileID: 11400000, guid: 958e4bb958303ce46b4f0458dd14e2af, type: 2}
   agent: {fileID: 0}
   findObjects: {fileID: 782257380}
+  mesh: {fileID: 0}
 --- !u!1001 &660548936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,7 +318,7 @@ PrefabInstance:
     - target: {fileID: 9121325311918373976, guid: 69030319ce6fa3a4fb6d0b1fa4ab9a9c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9121325311918373976, guid: 69030319ce6fa3a4fb6d0b1fa4ab9a9c,
         type: 3}
@@ -460,13 +462,14 @@ GameObject:
   - component: {fileID: 994564892}
   - component: {fileID: 994564891}
   - component: {fileID: 994564890}
+  - component: {fileID: 994564894}
   m_Layer: 6
   m_Name: floor
-  m_TagString: floor
+  m_TagString: agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &994564890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -543,6 +546,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &994564894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994564889}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureName: Floor
+  agentAsset: {fileID: 11400000, guid: eaba8556727231840bd32f1766ddf6c0, type: 2}
+  agent: {fileID: 0}
+  findObjects: {fileID: 0}
+  mesh: {fileID: 0}
 --- !u!1 &999739594
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +761,7 @@ MonoBehaviour:
   agentAsset: {fileID: 11400000, guid: d19bb2cc974f0c34d9a819f83b57b993, type: 2}
   agent: {fileID: 0}
   findObjects: {fileID: 782257380}
+  mesh: {fileID: 0}
 --- !u!1 &1894198288
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +900,7 @@ PrefabInstance:
     - target: {fileID: 1587343966240959553, guid: 67a9cd21cf0925a4da98cbdd26a69ed9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1587343966240959553, guid: 67a9cd21cf0925a4da98cbdd26a69ed9,
         type: 3}
@@ -965,6 +986,7 @@ MonoBehaviour:
   agentAsset: {fileID: 11400000, guid: a490cb10e0e487e48ab8babb762b9960, type: 2}
   agent: {fileID: 0}
   findObjects: {fileID: 782257380}
+  mesh: {fileID: 0}
 --- !u!1001 &1175015401844078000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1035,14 +1057,15 @@ PrefabInstance:
     - target: {fileID: 6480514043755298532, guid: 86303a6bb23759741abff5778e73e8c7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6480514043755298532, guid: 86303a6bb23759741abff5778e73e8c7,
         type: 3}
       propertyPath: m_TagString
       value: agent
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 68215268815378363, guid: 86303a6bb23759741abff5778e73e8c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86303a6bb23759741abff5778e73e8c7, type: 3}
 --- !u!1001 &1254005381753936271
 PrefabInstance:
@@ -1059,7 +1082,7 @@ PrefabInstance:
     - target: {fileID: 1829617492448626165, guid: 18e1a4f31872ee440a548629baf3d247,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1829617492448626165, guid: 18e1a4f31872ee440a548629baf3d247,
         type: 3}
@@ -1145,6 +1168,7 @@ MonoBehaviour:
   agentAsset: {fileID: 11400000, guid: 303622f20fb0c7f47ab4d06809526b85, type: 2}
   agent: {fileID: 0}
   findObjects: {fileID: 782257380}
+  mesh: {fileID: 0}
 --- !u!1001 &2982991513086730768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1160,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 400358268322592007, guid: 0f973ab095c32e049bad03df131bf852,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400358268322592007, guid: 0f973ab095c32e049bad03df131bf852,
         type: 3}
@@ -1246,6 +1270,7 @@ MonoBehaviour:
   agentAsset: {fileID: 11400000, guid: 672e7f8bd33fd4148a14497d58faca48, type: 2}
   agent: {fileID: 0}
   findObjects: {fileID: 782257380}
+  mesh: {fileID: 0}
 --- !u!1 &5305547641582619476 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6480514043755298532, guid: 86303a6bb23759741abff5778e73e8c7,
@@ -1268,3 +1293,4 @@ MonoBehaviour:
   agentAsset: {fileID: 11400000, guid: fb3cd7c42a31a834d9d84b5d245646f3, type: 2}
   agent: {fileID: 0}
   findObjects: {fileID: 782257380}
+  mesh: {fileID: 0}

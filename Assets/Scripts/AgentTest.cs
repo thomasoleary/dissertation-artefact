@@ -28,11 +28,23 @@ public class AgentTest : MonoBehaviour
 
     [SerializeField] private findobjects findObjects;
 
+    //[SerializeField] private Collider objectCollider;
+
+    [SerializeField] private Mesh mesh;
+
     void Awake()
     {
         InitialiseDirections();
         agent = agentAsset.GetInstance();
         agent.Init(furnitureName);
+
+        /* objectCollider = gameObject.GetComponent<Collider>();
+        Debug.Log(agent.furnitureName + " extents: " + objectCollider.bounds.extents); */
+        
+        mesh = gameObject.GetComponent<MeshFilter>().mesh;
+        Bounds bounds = mesh.bounds;
+        Debug.Log(agent.furnitureName + " mesh bounds: " + mesh.bounds);
+        Debug.Log(agent.furnitureName + " bounds extent: " + bounds.extents);
     }
 
     // Start is called before the first frame update
@@ -47,11 +59,11 @@ public class AgentTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!doOnce)
+        /* if (!doOnce)
         {
             StartCoroutine(MoreSearch());
             doOnce = true;
-        }
+        } */
         TestRay();
     }
 
@@ -72,27 +84,38 @@ public class AgentTest : MonoBehaviour
 
     IEnumerator MoreSearch()
     {
-        for (int i = 0; i < agent.potentialParents.Count(); i++)
+        if (agent.state == AgentState.SLEEP)
+            yield return null;
+            
+        for (int j = 0; j <= agent.searchIndex; j++)
         {
-            foreach (FurnitureObject fobj in findObjects.furnitureInScene)
+            //Debug.Log(j);
+            if (j == agent.searchIndex && !agent.hasFoundParent)
+                Debug.Log(agent.furnitureName + " could not find parent");
+                yield return null;
+            
+            for (int i = 0; i < agent.potentialParents.Count(); i++)
             {
-                if (!agent.hasFoundParent)
+                foreach (FurnitureObject fobj in findObjects.furnitureInScene)
                 {
-                    // if the type of furniture in the scene is the same type as a potential parent
-                    if (agent.potentialParents[i].parentType == fobj.typeOfFurniture)
+                    if (!agent.hasFoundParent)
                     {
-                        // find if potential parent has space for agent
-                        if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1)
-                            if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
-                            {
-                                //Debug.Log("There is space for: " + agent.name + " on " + fobj.name + " " + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
+                        // if the type of furniture in the scene is the same type as a potential parent
+                        if (agent.potentialParents[i].parentType == fobj.typeOfFurniture)
+                        {
+                            // find if potential parent has space for agent
+                            if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1)
+                                if (fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fobj.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
+                                {
+                                    //Debug.Log("There is space for: " + agent.name + " on " + fobj.name + " " + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
 
-                                fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
-                                agent.currentParent = fobj;
-                                agent.hasFoundParent = true;
-                                Debug.Log(agent.furnitureName + " has found parent & side: " + fobj.furnitureName + " " + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
-                                yield return null;
-                            }
+                                    fobj.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
+                                    agent.currentParent = fobj;
+                                    agent.hasFoundParent = true;
+                                    Debug.Log(agent.furnitureName + " has found parent & side: " + fobj.furnitureName + " " + fobj.sides[(int)agent.potentialParents[i].sideOnParent].axis);
+                                    yield return null;
+                                }
+                        }
                     }
                 }
             }

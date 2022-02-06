@@ -23,6 +23,7 @@ public class FurnitureObject : ScriptableObject
     }
     static readonly ReadOnlyCollection<Sides> defaultSidesValues;
 
+    [Header("General")]
     /// <summary>
     /// The furnitures name
     /// </summary>
@@ -38,22 +39,27 @@ public class FurnitureObject : ScriptableObject
     /// </summary>
     public AgentState state;
 
+    [Header("Agent Sides")]
     /// <summary>
     /// The Agents sides.
     /// </summary>
     public Sides[] sides = defaultSidesValues.ToArray();
 
+    [Header("Agent Parent Details")]
     /// <summary>
     /// An array of potential parents for the Agent
     /// </summary>
     public Parent[] potentialParents;
 
-    [HideInInspector] public bool hasFoundParent = false;
+    public bool hasFoundParent = false;
 
     /// <summary>
     /// The current parent of the Agent
     /// </summary>
     public FurnitureObject currentParent;
+
+    [Header("Agent State Details")]
+    public int searchIndex = 10;
 
     /// <summary>
     /// Returns an instance of the Agent
@@ -109,7 +115,7 @@ public struct Sides
 public struct Parent
 {
     // The type of agent the parent is
-    public FurnitureObject parent;
+    //public FurnitureObject parent;
 
     public TypeOfFurniture parentType;
     
@@ -152,6 +158,7 @@ public enum TypeOfFurniture
     CHAIR,
     DESK,
     DRAWERS,
+    FLOOR,
     TABLE_LAMP,
     WARDROBE
 }

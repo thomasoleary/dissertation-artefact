@@ -13,6 +13,19 @@ MonoBehaviour:
   m_Name: Floor
   m_EditorClassIdentifier: 
   furnitureName: Floor
+  typeOfFurniture: 5
   state: 3
-  sides: []
+  sides:
+  - axis: 0
+    distance: 0
+    clearanceSpace: 0
+    spaceForChildren: 10
+    currentChildren: 0
+    hasMaxChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
   potentialParents: []
+  hasFoundParent: 0
+  currentParent: {fileID: 0}
+  searchIndex: 0

@@ -171,7 +171,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2486617522953480207}
-  - component: {fileID: 5859860695996823340}
   m_Layer: 0
   m_Name: Left Drawer
   m_TagString: Untagged
@@ -194,19 +193,6 @@ Transform:
   m_Father: {fileID: 4386355386444274118}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5859860695996823340
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2540770180158073249}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0295708, y: 0.56235135, z: 0.7989186}
-  m_Center: {x: 0.1330688, y: 0.7333568, z: -0.9344384}
 --- !u!1 &3878480387439146260
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,8 +367,6 @@ GameObject:
   - component: {fileID: 9153219813594779972}
   - component: {fileID: 8901074425850383978}
   - component: {fileID: 6525402021457184690}
-  - component: {fileID: 5988014730246984848}
-  - component: {fileID: 7945144450566978276}
   m_Layer: 0
   m_Name: MetalBar
   m_TagString: Untagged
@@ -453,32 +437,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5988014730246984848
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5627754757476592627}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.84997165, y: 1.1967928, z: 0.122101545}
-  m_Center: {x: 0.15844691, y: 0.59896004, z: -0.93707156}
---- !u!65 &7945144450566978276
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5627754757476592627}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.84997165, y: 1.1967928, z: 0.10962522}
-  m_Center: {x: 0.15844691, y: 0.59896004, z: 0.9373955}
 --- !u!1 &6091478731097374667
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,8 +530,7 @@ GameObject:
   - component: {fileID: 4386355386444274118}
   - component: {fileID: 8765540765578317572}
   - component: {fileID: 4142420429137886598}
-  - component: {fileID: 68215268815378363}
-  - component: {fileID: 4783683996218378286}
+  - component: {fileID: 8311222543556187542}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -647,7 +604,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &68215268815378363
+--- !u!65 &8311222543556187542
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -658,21 +615,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1013441, y: 0.076040745, z: 2.7971845}
-  m_Center: {x: 0.15263236, y: 1.2372801, z: 1.6925497e-15}
---- !u!65 &4783683996218378286
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6480514043755298532}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.11673355, y: 0.84494877, z: 2.7971845}
-  m_Center: {x: -0.33967292, y: 0.8528261, z: 0}
+  m_Size: {x: 1.1013441, y: 1.2702246, z: 2.7971845}
+  m_Center: {x: 0.15263236, y: 0.6401882, z: 0}
 --- !u!1 &8344918588490814087
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +719,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8675430000874233304}
-  - component: {fileID: 5580909408120628056}
   m_Layer: 0
   m_Name: Right Drawers
   m_TagString: Untagged
@@ -799,19 +742,6 @@ Transform:
   m_Father: {fileID: 4386355386444274118}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5580909408120628056
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8502909843579638875}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0236566, y: 0.5741799, z: 0.8074224}
-  m_Center: {x: 0.14785421, y: 0.72152865, z: 0.946627}
 --- !u!1 &8853838947209343488
 GameObject:
   m_ObjectHideFlags: 0

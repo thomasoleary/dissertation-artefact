@@ -21,6 +21,7 @@ MonoBehaviour:
     clearanceSpace: 0
     spaceForChildren: 0
     currentChildren: 0
+    hasMaxChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
@@ -29,6 +30,7 @@ MonoBehaviour:
     clearanceSpace: 0
     spaceForChildren: 0
     currentChildren: 0
+    hasMaxChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
@@ -37,6 +39,7 @@ MonoBehaviour:
     clearanceSpace: 0
     spaceForChildren: 0
     currentChildren: 0
+    hasMaxChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
@@ -45,6 +48,7 @@ MonoBehaviour:
     clearanceSpace: 0
     spaceForChildren: 0
     currentChildren: 0
+    hasMaxChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
@@ -53,6 +57,7 @@ MonoBehaviour:
     clearanceSpace: 0
     spaceForChildren: 1
     currentChildren: 0
+    hasMaxChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
@@ -61,8 +66,14 @@ MonoBehaviour:
     clearanceSpace: 0
     spaceForChildren: 0
     currentChildren: 0
+    hasMaxChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
-  potentialParents: []
+  potentialParents:
+  - parentType: 5
+    sideOnParent: 0
+    sideOnAgent: 1
+  hasFoundParent: 0
   currentParent: {fileID: 0}
+  searchIndex: 5
