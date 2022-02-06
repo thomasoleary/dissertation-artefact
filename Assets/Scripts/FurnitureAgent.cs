@@ -6,6 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Agent", menuName = "Create New Agent")]
 public class FurnitureAgent : RootFurniture
 {
+    /// <summary>
+    /// Class constructor to initialise the Agents sides with the neccessary AxisDirections
+    /// </summary>
     static FurnitureAgent()
     {
         Sides[] sides = new Sides[6];
@@ -20,6 +23,9 @@ public class FurnitureAgent : RootFurniture
     static readonly ReadOnlyCollection<Sides> defaultSidesValues;
 
     [Header("Agent Sides")]
+    /// <summary>
+    /// The Sides array that contains all information an Agent needs regarding each side of itself
+    /// </summary>
     public Sides[] sides = defaultSidesValues.ToArray();
 
     [Header("Agent Parent Details")]
@@ -28,6 +34,9 @@ public class FurnitureAgent : RootFurniture
     /// </summary>
     public Parent[] potentialParents;
 
+    /// <summary>
+    /// If the Agent has found a parent or not
+    /// </summary>
     public bool hasFoundParent = false;
 
     /// <summary>

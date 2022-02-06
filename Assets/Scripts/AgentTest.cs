@@ -28,9 +28,8 @@ public class AgentTest : MonoBehaviour
 
     [SerializeField] private findobjects findObjects;
 
-    //[SerializeField] private Collider objectCollider;
+    [SerializeField] private BoxCollider objectCollider;
 
-    [SerializeField] private Mesh mesh;
 
     void Awake()
     {
@@ -38,13 +37,7 @@ public class AgentTest : MonoBehaviour
         agent = agentAsset.GetInstance();
         agent.Init(furnitureName);
 
-        /* objectCollider = gameObject.GetComponent<Collider>();
-        Debug.Log(agent.furnitureName + " extents: " + objectCollider.bounds.extents); */
-        
-        mesh = gameObject.GetComponent<MeshFilter>().mesh;
-        Bounds bounds = mesh.bounds;
-        Debug.Log(agent.furnitureName + " mesh bounds: " + mesh.bounds);
-        Debug.Log(agent.furnitureName + " bounds extent: " + bounds.extents);
+        objectCollider = gameObject.GetComponent<BoxCollider>();
     }
 
     // Start is called before the first frame update
@@ -55,7 +48,7 @@ public class AgentTest : MonoBehaviour
         
     }
 
-    bool doOnce = false;
+    //bool doOnce = false;
     // Update is called once per frame
     void Update()
     {
@@ -67,11 +60,14 @@ public class AgentTest : MonoBehaviour
         TestRay();
     }
 
+    Vector3 rayOrigin;
     void TestRay()
     {
         for (int i = 0; i < agent.sides.Count(); i++)
         {
-            Debug.DrawRay(transform.position, (transform.rotation * GetAxis(agent.sides[i].axis)) * agent.sides[i].distance, Color.red);
+            rayOrigin = (transform.position + objectCollider.center);// - transform.right;// * objectCollider.bounds.extents.x;
+            
+            Debug.DrawRay(rayOrigin, (transform.rotation * GetAxis(agent.sides[i].axis)) * agent.sides[i].distance, Color.red);
             RaycastHit groundHit;
             if (Physics.Raycast(transform.position, (transform.rotation * GetAxis(agent.sides[i].axis)), out groundHit, agent.sides[i].distance, agent.sides[i].layers))
             {

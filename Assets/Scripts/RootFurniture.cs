@@ -1,11 +1,12 @@
-using System;
-
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Root Furniture", menuName = "Create New Root")]
 public class RootFurniture : ScriptableObject
 {
     [Header("General")]
+    /// <summary>
+    /// The Agents name
+    /// </summary>
     public string furnitureName;
     public TypeOfFurniture typeOfFurniture;
     public AgentState state;
@@ -22,6 +23,9 @@ public enum AgentState
     SLEEP
 }
 
+/// <summary>
+/// The different Types of Furniture
+/// </summary>
 public enum TypeOfFurniture
 {
     BED,
