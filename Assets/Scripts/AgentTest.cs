@@ -25,6 +25,8 @@ public class AgentTest : MonoBehaviour
     /// This array is used to match up the AxisDirections to the correct Vector3
     /// </summary>
     private Vector3[] vectorAxis = new Vector3[6];
+    private Vector3[] transformDirs = new Vector3[6];
+    private float[] boundsExtents = new float[6];
 
     [SerializeField] private findobjects findObjects;
 
@@ -65,7 +67,7 @@ public class AgentTest : MonoBehaviour
     {
         for (int i = 0; i < agent.sides.Count(); i++)
         {
-            rayOrigin = (transform.position + objectCollider.center);// - transform.right;// * objectCollider.bounds.extents.x;
+            rayOrigin = (transform.position + objectCollider.center) + GetTransformDir(agent.sides[i].axis) * GetBoundsAxis(agent.sides[i].axis);// * GetBoundsAxis(agent.sides[i].axis);
             
             Debug.DrawRay(rayOrigin, (transform.rotation * GetAxis(agent.sides[i].axis)) * agent.sides[i].distance, Color.red);
             RaycastHit groundHit;
@@ -128,6 +130,16 @@ public class AgentTest : MonoBehaviour
         return vectorAxis[(int)axis];
     }
 
+    public Vector3 GetTransformDir(AxisDirections axis)
+    {
+        return transformDirs[(int)axis];
+    }
+
+    public float GetBoundsAxis(AxisDirections axis)
+    {
+        return boundsExtents[(int)axis];
+    }
+
     /// <summary>
     /// Each element in the vectorAxis array being initialised with a Vector3 direction
     /// </summary>
@@ -139,6 +151,20 @@ public class AgentTest : MonoBehaviour
         vectorAxis[3] = Vector3.back;
         vectorAxis[4] = Vector3.right;
         vectorAxis[5] = Vector3.left;
+
+        transformDirs[0] = transform.up;
+        transformDirs[1] = -transform.up;
+        transformDirs[2] = transform.forward;
+        transformDirs[3] = -transform.forward;
+        transformDirs[4] = transform.right;
+        transformDirs[5] = -transform.right;
+
+        boundsExtents[0] = objectCollider.bounds.extents.y;
+        boundsExtents[1] = objectCollider.bounds.extents.y;
+        boundsExtents[2] = objectCollider.bounds.extents.z;
+        boundsExtents[3] = objectCollider.bounds.extents.z;
+        boundsExtents[4] = objectCollider.bounds.extents.x;
+        boundsExtents[5] = objectCollider.bounds.extents.x;
     }
 
 
