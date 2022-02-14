@@ -39,13 +39,12 @@ public class AgentTest : MonoBehaviour
         agent = agentAsset.GetInstance();
         agent.Init(furnitureName);
 
-        objectCollider = gameObject.GetComponent<BoxCollider>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //AnotherSearch();
+        objectCollider = gameObject.GetComponent<BoxCollider>();
 
         
     }
@@ -63,19 +62,20 @@ public class AgentTest : MonoBehaviour
     }
 
     Vector3 rayOrigin;
+    Vector3 rayDirection;
     void TestRay()
     {
         for (int i = 0; i < agent.sides.Count(); i++)
         {
-            rayOrigin = (transform.position + objectCollider.center) + GetTransformDir(agent.sides[i].axis) * GetBoundsAxis(agent.sides[i].axis);// * GetBoundsAxis(agent.sides[i].axis);
+            rayOrigin = ((transform.position + objectCollider.center) + GetTransformDir(agent.sides[i].axis) * GetBoundsAxis(agent.sides[i].axis));
+            rayDirection = (transform.rotation * GetAxis(agent.sides[i].axis) ) * agent.sides[i].distance;
             
-            Debug.DrawRay(rayOrigin, (transform.rotation * GetAxis(agent.sides[i].axis)) * agent.sides[i].distance, Color.red);
-            RaycastHit groundHit;
-            if (Physics.Raycast(transform.position, (transform.rotation * GetAxis(agent.sides[i].axis)), out groundHit, agent.sides[i].distance, agent.sides[i].layers))
-            {
-                Debug.DrawRay(transform.position, (transform.rotation * GetAxis(agent.sides[i].axis)) * agent.sides[i].distance, Color.green);
+            Debug.DrawRay(rayOrigin, rayDirection, Color.red);
 
-                //Debug.Log(gameObject.name + " " + agent.sides[i].axis.ToString() + " is hitting: " + groundHit.collider.name);
+            RaycastHit groundHit;
+            if (Physics.Raycast(rayOrigin, rayDirection, out groundHit, agent.sides[i].distance, agent.sides[i].layers))
+            {
+                Debug.DrawRay(rayOrigin, rayDirection, Color.green);
             }
         }
     }
@@ -121,24 +121,6 @@ public class AgentTest : MonoBehaviour
         yield return null;
     }
 
-    /// <summary>
-    /// Returns an element in the vectorAxis array dependent on the AxisDirections enum
-    /// E.g. AxisDirections.UP will return Vector3.up
-    /// </summary>
-    public Vector3 GetAxis(AxisDirections axis)
-    {
-        return vectorAxis[(int)axis];
-    }
-
-    public Vector3 GetTransformDir(AxisDirections axis)
-    {
-        return transformDirs[(int)axis];
-    }
-
-    public float GetBoundsAxis(AxisDirections axis)
-    {
-        return boundsExtents[(int)axis];
-    }
 
     /// <summary>
     /// Each element in the vectorAxis array being initialised with a Vector3 direction
@@ -167,6 +149,24 @@ public class AgentTest : MonoBehaviour
         boundsExtents[5] = objectCollider.bounds.extents.x;
     }
 
+    /// <summary>
+    /// Returns an element in the vectorAxis array dependent on the AxisDirections enum
+    /// E.g. AxisDirections.UP will return Vector3.up
+    /// </summary>
+    public Vector3 GetAxis(AxisDirections axis)
+    {
+        return vectorAxis[(int)axis];
+    }
+
+    public Vector3 GetTransformDir(AxisDirections axis)
+    {
+        return transformDirs[(int)axis];
+    }
+
+    public float GetBoundsAxis(AxisDirections axis)
+    {
+        return boundsExtents[(int)axis];
+    }
 
 }
 
