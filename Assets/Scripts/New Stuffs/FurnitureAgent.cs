@@ -42,8 +42,17 @@ public class FurnitureAgent : RootFurniture
     /// <summary>
     /// The current parent of the Agent
     /// </summary>
-    public GameObject currentParent;
+    public FurnitureAgent currentParent;
 
+    public FurnitureAgent GetInstance()
+    {
+        return Instantiate(this);
+    }
+
+    public virtual void Init(string furnitureName)
+    {
+        this.furnitureName = furnitureName;
+    }
 }
 
 /// <summary>
