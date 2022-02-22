@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AgentManager : MonoBehaviour
 {
-    public FurnitureAgent[] furnitureInScene;
+    public RootFurniture[] furnitureInScene;
 
     void Start()
     {
-        furnitureInScene = GameObject.FindObjectsOfType<FurnitureAgent>();
+        furnitureInScene = GameObject.FindObjectsOfType<RootFurniture>();
     }
 }

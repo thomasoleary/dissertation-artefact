@@ -10,8 +10,7 @@ public class RootFurniture : ScriptableObject
     public string furnitureName;
     public TypeOfFurniture typeOfFurniture;
     public AgentState state;
-
-    public bool IsAbleToBeParent => state == AgentState.REST || state == AgentState.SLEEP;
+    public bool CanBeParent => state == AgentState.REST || state == AgentState.SLEEP;
 }
 
 /// <summary>

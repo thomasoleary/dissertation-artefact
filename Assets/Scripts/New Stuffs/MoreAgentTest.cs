@@ -74,7 +74,7 @@ public class MoreAgentTest : MonoBehaviour
         {
             foreach(FurnitureAgent fAgent in aManager.furnitureInScene)
             {
-                if (agent.potentialParents[i].parentType == fAgent.typeOfFurniture && fAgent.IsAbleToBeParent)
+                if (agent.potentialParents[i].parentType == fAgent.typeOfFurniture && fAgent.CanBeParent)
                 {
                     if (fAgent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1)
                         if (fAgent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fAgent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)

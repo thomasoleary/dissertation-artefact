@@ -42,7 +42,7 @@ public class FurnitureAgent : RootFurniture
     /// <summary>
     /// The current parent of the Agent
     /// </summary>
-    public FurnitureAgent currentParent;
+    public RootFurniture currentParent;
 
     public FurnitureAgent GetInstance()
     {
