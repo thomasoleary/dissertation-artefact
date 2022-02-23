@@ -6,17 +6,16 @@ public class MoreAgentTest : MonoBehaviour
 {
     public string furnitureName;
 
-    public RootFurniture agentSO;
+    public FurnitureObject agentSO;
 
-    public FurnitureAgent agent;
+    public FurnitureObject agent;
 
     [SerializeField] private AgentManager aManager;
 
     void Awake()
     {
-        agent = agentSO.GetInstance() as FurnitureAgent;
+        agent = agentSO.GetInstance();
         agent.Init(furnitureName);
-
     }
 
     void Update()
@@ -67,21 +66,24 @@ public class MoreAgentTest : MonoBehaviour
 
     bool Search()
     {
+        // TO-DO
+        // Agent needs to be deleted if a potential parent cannot be found
+
         Debug.Log(agent.furnitureName + " is Searching");
 
         for (int i = 0; i < agent.potentialParents.Count(); i++)
         {
-            foreach(FurnitureAgent fAgent in aManager.furnitureInScene)
+            foreach(FurnitureObject fObject in aManager.furnitureInScene)
             {
-                if (agent.potentialParents[i].parentType == fAgent.typeOfFurniture && fAgent.CanBeParent)
+                if (agent.potentialParents[i].parentType == fObject.typeOfFurniture && fObject.CanBeParent)
                 {
-                    if (fAgent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1)
-                        if (fAgent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fAgent.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
+                    if (fObject.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren >= 1)
+                        if (fObject.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fObject.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
                         {
-                            fAgent.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
-                            agent.currentParent = fAgent;
+                            fObject.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
+                            agent.currentParent = fObject;
                             agent.hasFoundParent = true;
-                            Debug.Log(agent.furnitureName + " has found parent: " + fAgent.furnitureName + " " + fAgent.sides[(int)agent.potentialParents[i].sideOnParent].axis);
+                            Debug.Log(agent.furnitureName + " has found parent: " + fObject.furnitureName + " " + fObject.sides[(int)agent.potentialParents[i].sideOnParent].axis);
                             return true;
                         }
                 }

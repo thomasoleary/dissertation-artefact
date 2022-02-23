@@ -53,6 +53,8 @@ public class FurnitureObject : ScriptableObject
 
     public bool hasFoundParent = false;
 
+    public bool CanBeParent => state == AgentState.REST || state == AgentState.SLEEP;
+
     /// <summary>
     /// The current parent of the Agent
     /// </summary>
