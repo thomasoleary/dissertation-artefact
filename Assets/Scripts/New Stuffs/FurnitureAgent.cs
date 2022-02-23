@@ -44,10 +44,10 @@ public class FurnitureAgent : RootFurniture
     /// </summary>
     public RootFurniture currentParent;
 
-    public FurnitureAgent GetInstance()
+    /* public FurnitureAgent GetInstance()
     {
         return Instantiate(this);
-    }
+    } */
 
     public virtual void Init(string furnitureName)
     {

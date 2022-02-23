@@ -6,7 +6,7 @@ public class MoreAgentTest : MonoBehaviour
 {
     public string furnitureName;
 
-    public FurnitureAgent agentSO;
+    public RootFurniture agentSO;
 
     public FurnitureAgent agent;
 
@@ -14,7 +14,7 @@ public class MoreAgentTest : MonoBehaviour
 
     void Awake()
     {
-        agent = agentSO.GetInstance();
+        agent = agentSO.GetInstance() as FurnitureAgent;
         agent.Init(furnitureName);
 
     }
@@ -52,7 +52,6 @@ public class MoreAgentTest : MonoBehaviour
                 break;
             
             case AgentState.ARRANGE:
-                Debug.Log(agent.furnitureName + " is Arranging");
                 agent.state = AgentState.REST;
                 break;
             

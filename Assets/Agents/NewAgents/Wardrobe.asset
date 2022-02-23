@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636b2bbc754582a4488bc62b7635b97b, type: 3}
   m_Name: Wardrobe
   m_EditorClassIdentifier: 
-  furnitureName: 
-  typeOfFurniture: 0
+  furnitureName: Wardrobe
+  typeOfFurniture: 8
   state: 0
   sides:
   - axis: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636b2bbc754582a4488bc62b7635b97b, type: 3}
   m_Name: Bed
   m_EditorClassIdentifier: 
-  furnitureName: 
+  furnitureName: Bed
   typeOfFurniture: 0
-  state: 0
+  state: 3
   sides:
   - axis: 0
     distance: 1
@@ -37,7 +37,7 @@ MonoBehaviour:
   - axis: 2
     distance: 1
     clearanceSpace: 0
-    spaceForChildren: 0
+    spaceForChildren: 1
     currentChildren: 0
     hasMaxChildren: 0
     layers:
@@ -46,7 +46,7 @@ MonoBehaviour:
   - axis: 3
     distance: 1
     clearanceSpace: 0
-    spaceForChildren: 0
+    spaceForChildren: 1
     currentChildren: 0
     hasMaxChildren: 0
     layers:
@@ -70,6 +70,9 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 0
-  potentialParents: []
+  potentialParents:
+  - parentType: 5
+    sideOnParent: 0
+    sideOnAgent: 1
   hasFoundParent: 0
   currentParent: {fileID: 0}

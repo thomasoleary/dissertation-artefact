@@ -11,6 +11,11 @@ public class RootFurniture : ScriptableObject
     public TypeOfFurniture typeOfFurniture;
     public AgentState state;
     public bool CanBeParent => state == AgentState.REST || state == AgentState.SLEEP;
+
+    public RootFurniture GetInstance()
+    {
+        return Instantiate(this);
+    }
 }
 
 /// <summary>

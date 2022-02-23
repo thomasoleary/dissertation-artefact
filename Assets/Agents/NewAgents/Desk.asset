@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636b2bbc754582a4488bc62b7635b97b, type: 3}
   m_Name: Desk
   m_EditorClassIdentifier: 
-  furnitureName: 
-  typeOfFurniture: 0
-  state: 0
+  furnitureName: Desk
+  typeOfFurniture: 3
+  state: 2
   sides:
   - axis: 0
     distance: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
   - axis: 4
     distance: 1
     clearanceSpace: 0
-    spaceForChildren: 0
+    spaceForChildren: 1
     currentChildren: 0
     hasMaxChildren: 0
     layers:

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636b2bbc754582a4488bc62b7635b97b, type: 3}
   m_Name: Table Lamp
   m_EditorClassIdentifier: 
-  furnitureName: 
-  typeOfFurniture: 0
+  furnitureName: Table Lamp
+  typeOfFurniture: 6
   state: 0
   sides:
   - axis: 0
@@ -70,6 +70,9 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 0
-  potentialParents: []
+  potentialParents:
+  - parentType: 1
+    sideOnParent: 0
+    sideOnAgent: 1
   hasFoundParent: 0
   currentParent: {fileID: 0}

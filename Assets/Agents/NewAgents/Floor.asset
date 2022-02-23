@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c21b1f3ed814e54c8cfaae282ec3f30, type: 3}
   m_Name: Floor
   m_EditorClassIdentifier: 
-  furnitureName: 
-  typeOfFurniture: 0
-  state: 0
+  furnitureName: Floor
+  typeOfFurniture: 5
+  state: 3
