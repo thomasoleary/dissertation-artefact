@@ -25,12 +25,13 @@ public class AgentTest : MonoBehaviour
     /// This array is used to match up the AxisDirections to the correct Vector3
     /// </summary>
     private Vector3[] vectorAxis = new Vector3[6];
+    private Vector3[] transformDirs = new Vector3[6];
+    private float[] boundsExtents = new float[6];
 
     [SerializeField] private findobjects findObjects;
 
-    //[SerializeField] private Collider objectCollider;
+    [SerializeField] private BoxCollider objectCollider;
 
-    [SerializeField] private Mesh mesh;
 
     void Awake()
     {
@@ -38,24 +39,17 @@ public class AgentTest : MonoBehaviour
         agent = agentAsset.GetInstance();
         agent.Init(furnitureName);
 
-        /* objectCollider = gameObject.GetComponent<Collider>();
-        Debug.Log(agent.furnitureName + " extents: " + objectCollider.bounds.extents); */
-        
-        mesh = gameObject.GetComponent<MeshFilter>().mesh;
-        Bounds bounds = mesh.bounds;
-        Debug.Log(agent.furnitureName + " mesh bounds: " + mesh.bounds);
-        Debug.Log(agent.furnitureName + " bounds extent: " + bounds.extents);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //AnotherSearch();
+        objectCollider = gameObject.GetComponent<BoxCollider>();
 
         
     }
 
-    bool doOnce = false;
+    //bool doOnce = false;
     // Update is called once per frame
     void Update()
     {
@@ -67,17 +61,21 @@ public class AgentTest : MonoBehaviour
         TestRay();
     }
 
+    Vector3 rayOrigin;
+    Vector3 rayDirection;
     void TestRay()
     {
         for (int i = 0; i < agent.sides.Count(); i++)
         {
-            Debug.DrawRay(transform.position, (transform.rotation * GetAxis(agent.sides[i].axis)) * agent.sides[i].distance, Color.red);
-            RaycastHit groundHit;
-            if (Physics.Raycast(transform.position, (transform.rotation * GetAxis(agent.sides[i].axis)), out groundHit, agent.sides[i].distance, agent.sides[i].layers))
-            {
-                Debug.DrawRay(transform.position, (transform.rotation * GetAxis(agent.sides[i].axis)) * agent.sides[i].distance, Color.green);
+            rayOrigin = ((transform.position + objectCollider.center) + GetTransformDir(agent.sides[i].axis) * GetBoundsAxis(agent.sides[i].axis));
+            rayDirection = (transform.rotation * GetAxis(agent.sides[i].axis) ) * agent.sides[i].distance;
+            
+            Debug.DrawRay(rayOrigin, rayDirection, Color.red);
 
-                //Debug.Log(gameObject.name + " " + agent.sides[i].axis.ToString() + " is hitting: " + groundHit.collider.name);
+            RaycastHit groundHit;
+            if (Physics.Raycast(rayOrigin, rayDirection, out groundHit, agent.sides[i].distance, agent.sides[i].layers))
+            {
+                Debug.DrawRay(rayOrigin, rayDirection, Color.green);
             }
         }
     }
@@ -123,14 +121,6 @@ public class AgentTest : MonoBehaviour
         yield return null;
     }
 
-    /// <summary>
-    /// Returns an element in the vectorAxis array dependent on the AxisDirections enum
-    /// E.g. AxisDirections.UP will return Vector3.up
-    /// </summary>
-    public Vector3 GetAxis(AxisDirections axis)
-    {
-        return vectorAxis[(int)axis];
-    }
 
     /// <summary>
     /// Each element in the vectorAxis array being initialised with a Vector3 direction
@@ -143,8 +133,40 @@ public class AgentTest : MonoBehaviour
         vectorAxis[3] = Vector3.back;
         vectorAxis[4] = Vector3.right;
         vectorAxis[5] = Vector3.left;
+
+        transformDirs[0] = transform.up;
+        transformDirs[1] = -transform.up;
+        transformDirs[2] = transform.forward;
+        transformDirs[3] = -transform.forward;
+        transformDirs[4] = transform.right;
+        transformDirs[5] = -transform.right;
+
+        boundsExtents[0] = objectCollider.bounds.extents.y;
+        boundsExtents[1] = objectCollider.bounds.extents.y;
+        boundsExtents[2] = objectCollider.bounds.extents.z;
+        boundsExtents[3] = objectCollider.bounds.extents.z;
+        boundsExtents[4] = objectCollider.bounds.extents.x;
+        boundsExtents[5] = objectCollider.bounds.extents.x;
     }
 
+    /// <summary>
+    /// Returns an element in the vectorAxis array dependent on the AxisDirections enum
+    /// E.g. AxisDirections.UP will return Vector3.up
+    /// </summary>
+    public Vector3 GetAxis(AxisDirections axis)
+    {
+        return vectorAxis[(int)axis];
+    }
+
+    public Vector3 GetTransformDir(AxisDirections axis)
+    {
+        return transformDirs[(int)axis];
+    }
+
+    public float GetBoundsAxis(AxisDirections axis)
+    {
+        return boundsExtents[(int)axis];
+    }
 
 }
 

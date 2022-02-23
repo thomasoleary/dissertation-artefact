@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99008ebdd092a6546ba5427df633d2bd, type: 3}
-  m_Name: FloorTest
+  m_Script: {fileID: 11500000, guid: 636b2bbc754582a4488bc62b7635b97b, type: 3}
+  m_Name: Table Lamp
   m_EditorClassIdentifier: 
-  furnitureName: FloorTest
-  typeOfFurniture: 5
-  state: 3
+  furnitureName: Table Lamp
+  typeOfFurniture: 6
+  state: 0
   sides:
   - axis: 0
     distance: 1
     clearanceSpace: 0
-    spaceForChildren: 10
+    spaceForChildren: 0
     currentChildren: 0
     hasMaxChildren: 0
     layers:
@@ -70,7 +70,9 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 0
-  potentialParents: []
+  potentialParents:
+  - parentType: 1
+    sideOnParent: 0
+    sideOnAgent: 1
   hasFoundParent: 0
   currentParent: {fileID: 0}
-  searchIndex: 0

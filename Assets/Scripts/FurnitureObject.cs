@@ -53,6 +53,8 @@ public class FurnitureObject : ScriptableObject
 
     public bool hasFoundParent = false;
 
+    public bool CanBeParent => state == AgentState.REST || state == AgentState.SLEEP;
+
     /// <summary>
     /// The current parent of the Agent
     /// </summary>
@@ -80,23 +82,6 @@ public class FurnitureObject : ScriptableObject
 
 
 
-/// <summary>
-/// Parent struct that handles neccessary data about a parent
-/// </summary>
-[Serializable]
-public struct Parent
-{
-    // The type of agent the parent is
-    //public FurnitureObject parent;
-
-    public TypeOfFurniture parentType;
-    
-    // What side on the parent the agent should be placed on
-    public AxisDirections sideOnParent;
-
-    // What side the agent should place on the parent
-    public AxisDirections sideOnAgent;
-}
 
 
 
