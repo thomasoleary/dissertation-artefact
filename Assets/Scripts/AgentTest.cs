@@ -35,9 +35,9 @@ public class AgentTest : MonoBehaviour
 
     void Awake()
     {
-        InitialiseDirections();
         agent = agentAsset.GetInstance();
-        agent.Init(furnitureName);
+        agent.Init(furnitureName, this.gameObject);
+        InitialiseDirections();
 
     }
 
@@ -67,7 +67,7 @@ public class AgentTest : MonoBehaviour
     {
         for (int i = 0; i < agent.sides.Count(); i++)
         {
-            rayOrigin = ((transform.position + objectCollider.center) + GetTransformDir(agent.sides[i].axis) * GetBoundsAxis(agent.sides[i].axis));
+            rayOrigin = transform.position + transform.TransformDirection(GetAxis(agent.sides[i].axis)) * (GetBoundsAxis(agent.sides[i].axis) / 2);
             rayDirection = (transform.rotation * GetAxis(agent.sides[i].axis) ) * agent.sides[i].distance;
             
             Debug.DrawRay(rayOrigin, rayDirection, Color.red);
@@ -80,7 +80,7 @@ public class AgentTest : MonoBehaviour
         }
     }
 
-    IEnumerator MoreSearch()
+   /*  IEnumerator MoreSearch()
     {
         if (agent.state == AgentState.SLEEP)
             yield return null;
@@ -119,7 +119,7 @@ public class AgentTest : MonoBehaviour
             }
         }
         yield return null;
-    }
+    } */
 
 
     /// <summary>
@@ -141,12 +141,12 @@ public class AgentTest : MonoBehaviour
         transformDirs[4] = transform.right;
         transformDirs[5] = -transform.right;
 
-        boundsExtents[0] = objectCollider.bounds.extents.y;
-        boundsExtents[1] = objectCollider.bounds.extents.y;
-        boundsExtents[2] = objectCollider.bounds.extents.z;
-        boundsExtents[3] = objectCollider.bounds.extents.z;
-        boundsExtents[4] = objectCollider.bounds.extents.x;
-        boundsExtents[5] = objectCollider.bounds.extents.x;
+        boundsExtents[0] = agent.gameObject.transform.localScale.y;
+        boundsExtents[1] = agent.gameObject.transform.localScale.y;
+        boundsExtents[2] = agent.gameObject.transform.localScale.z;
+        boundsExtents[3] = agent.gameObject.transform.localScale.z;
+        boundsExtents[4] = agent.gameObject.transform.localScale.x;
+        boundsExtents[5] = agent.gameObject.transform.localScale.x;
     }
 
     /// <summary>

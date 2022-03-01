@@ -216,8 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: bedsidecabinet
-  agentSO: {fileID: 11400000, guid: 2264949ba00942c49a239a36d23615ea, type: 2}
+  furnitureName: BedsideCabinet_1
+  agentSO: {fileID: 11400000, guid: a490cb10e0e487e48ab8babb762b9960, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &200871962 stripped
@@ -268,7 +268,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &347367305 stripped
 GameObject:
@@ -288,8 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: tablelamp
-  agentSO: {fileID: 11400000, guid: 6d54817436374fd449c292bc51e1604e, type: 2}
+  furnitureName: TableLamp_1
+  agentSO: {fileID: 11400000, guid: d19bb2cc974f0c34d9a819f83b57b993, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &347367310 stripped
@@ -390,8 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: chair
-  agentSO: {fileID: 11400000, guid: dc4471b572a6b1d49986a15ada9d2196, type: 2}
+  furnitureName: Chair
+  agentSO: {fileID: 11400000, guid: c1fbad87ac79d674c9aa8c57fa212a42, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &379540841 stripped
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furnitureName: Drawers
-  agentSO: {fileID: 11400000, guid: c1565b7a2d683f64892ef1e64169f02c, type: 2}
+  agentSO: {fileID: 11400000, guid: 672e7f8bd33fd4148a14497d58faca48, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &657624424 stripped
@@ -445,6 +445,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bedside Cabinet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829617492448626165, guid: 18e1a4f31872ee440a548629baf3d247,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2482371879624073598, guid: 18e1a4f31872ee440a548629baf3d247,
         type: 3}
@@ -522,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furnitureName: Wardrobe
-  agentSO: {fileID: 11400000, guid: b8226fc089244254abaf2fa18f38ba86, type: 2}
+  agentSO: {fileID: 11400000, guid: 303622f20fb0c7f47ab4d06809526b85, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &826761172 stripped
@@ -623,8 +628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: bed
-  agentSO: {fileID: 11400000, guid: 6681590a5f3d7ba428a00f2adf7527a1, type: 2}
+  furnitureName: Bed
+  agentSO: {fileID: 11400000, guid: 958e4bb958303ce46b4f0458dd14e2af, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &890644318 stripped
@@ -709,7 +714,7 @@ PrefabInstance:
     - target: {fileID: 6503843714454242002, guid: f5539b103c41d7b4580a60ee264b5525,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5539b103c41d7b4580a60ee264b5525, type: 3}
@@ -728,7 +733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &992621924
 Transform:
   m_ObjectHideFlags: 0
@@ -750,121 +755,8 @@ Transform:
   - {fileID: 379540841}
   - {fileID: 890644318}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &994564889
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 994564893}
-  - component: {fileID: 994564892}
-  - component: {fileID: 994564891}
-  - component: {fileID: 994564890}
-  - component: {fileID: 994564894}
-  m_Layer: 6
-  m_Name: floor
-  m_TagString: agent
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!65 &994564890
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994564889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &994564891
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994564889}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 937f11435b92d044ea7b6cdc6da2d858, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &994564892
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994564889}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &994564893
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994564889}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.613, y: 0.24997, z: 12.411}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &994564894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994564889}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a006340d7745ca140822682154afad8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  furnitureName: Floor
-  agentAsset: {fileID: 11400000, guid: eaba8556727231840bd32f1766ddf6c0, type: 2}
-  agent: {fileID: 0}
-  findObjects: {fileID: 0}
-  objectCollider: {fileID: 0}
 --- !u!1 &999739594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1083,118 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e1a4f31872ee440a548629baf3d247, type: 3}
+--- !u!1 &1201831505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201831510}
+  - component: {fileID: 1201831509}
+  - component: {fileID: 1201831508}
+  - component: {fileID: 1201831507}
+  - component: {fileID: 1201831506}
+  m_Layer: 0
+  m_Name: floor
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1201831506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201831505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureName: floor
+  agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
+  agent: {fileID: 0}
+  aManager: {fileID: 325905323}
+--- !u!65 &1201831507
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201831505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1201831508
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201831505}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1201831509
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201831505}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1201831510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201831505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.16, y: 4.4758487, z: -5.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499979254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1829617492448626165, guid: 18e1a4f31872ee440a548629baf3d247,
@@ -1209,8 +1213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: BedsideCabinet1
-  agentSO: {fileID: 11400000, guid: 2264949ba00942c49a239a36d23615ea, type: 2}
+  furnitureName: BedsideCabinet_2
+  agentSO: {fileID: 11400000, guid: a490cb10e0e487e48ab8babb762b9960, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &1499979259 stripped
@@ -1237,8 +1241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: desk
-  agentSO: {fileID: 11400000, guid: b2fa4adda40797242bb3eb060c0d56a3, type: 2}
+  furnitureName: Desk
+  agentSO: {fileID: 11400000, guid: fb3cd7c42a31a834d9d84b5d245646f3, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &1627714574 stripped
@@ -1398,7 +1402,7 @@ PrefabInstance:
     - target: {fileID: 6480514043755298532, guid: 86303a6bb23759741abff5778e73e8c7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86303a6bb23759741abff5778e73e8c7, type: 3}
@@ -1420,8 +1424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: tablelamp1
-  agentSO: {fileID: 11400000, guid: 6d54817436374fd449c292bc51e1604e, type: 2}
+  furnitureName: TableLamp_2
+  agentSO: {fileID: 11400000, guid: d19bb2cc974f0c34d9a819f83b57b993, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 325905323}
 --- !u!4 &1961003075 stripped

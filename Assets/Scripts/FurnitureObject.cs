@@ -39,6 +39,16 @@ public class FurnitureObject : ScriptableObject
     /// </summary>
     public AgentState state;
 
+    /// <summary>
+    /// The BoxCollider of the Agent
+    /// </summary>
+    [HideInInspector] public BoxCollider boxCollider;
+
+    /// <summary>
+    /// The GameObject of the Agent
+    /// </summary>
+    [HideInInspector] public GameObject gameObject;
+
     [Header("Agent Sides")]
     /// <summary>
     /// The Agents sides.
@@ -51,14 +61,24 @@ public class FurnitureObject : ScriptableObject
     /// </summary>
     public Parent[] potentialParents;
 
+    /// <summary>
+    /// Whether or not the Agent has found a parent
+    /// </summary>
     public bool hasFoundParent = false;
 
+    /// <summary>
+    /// Whether or not the Agent can be a parent itself
+    /// </summary>
     public bool CanBeParent => state == AgentState.REST || state == AgentState.SLEEP;
 
     /// <summary>
     /// The current parent of the Agent
     /// </summary>
     public FurnitureObject currentParent;
+
+    public BoxCollider parentCollider;
+
+    public GameObject parentGObj;
 
     [Header("Agent State Details")]
     public int searchIndex = 10;
@@ -71,13 +91,82 @@ public class FurnitureObject : ScriptableObject
         return Instantiate(this);
     }
 
-    public virtual void Init(string furnitureName)
+    public virtual void Init(string name, GameObject gObj)
     {
-        this.furnitureName = furnitureName;
-        //Debug.Log(this.furnitureName + " test init");
+        this.furnitureName = name;
+        this.gameObject = gObj;
+        this.boxCollider = gameObject.GetComponent<BoxCollider>();
     }
     
 }
+
+/// <summary>
+/// Sides struct that contains data required for each side of the Agent
+/// </summary>
+[Serializable]
+public struct Sides
+{
+    // The direction of the side
+    public AxisDirections axis;
+
+    // The distance of the side
+
+    [Range(0.0f, 10.0f)]
+    public float distance;
+
+    public Vector3 origin;
+    public Vector3 normal;
+    
+
+    // How much clearance space this distance requires
+    public float clearanceSpace;
+
+    // How many children can be placed on the side
+    public int spaceForChildren;
+
+    // How many current children are placed on the side
+    public int currentChildren;
+
+    // If the side has max amount of children
+    public bool hasMaxChildren;
+
+    // The layer that the side can raycast
+    public LayerMask layers;
+}
+
+
+/// <summary>
+/// Parent struct that handles neccessary data about a parent
+/// </summary>
+[Serializable]
+public struct Parent
+{
+    // The type of agent the parent is
+    //public FurnitureObject parent;
+
+    public TypeOfFurniture parentType;
+    
+    // What side on the parent the agent should be placed on
+    public AxisDirections sideOnParent;
+
+    // What side the agent should place on the parent
+    public AxisDirections sideOnAgent;
+}
+
+/// <summary>
+/// All directions that are used
+/// </summary>
+public enum AxisDirections
+{
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT,
+    FORWARD,
+    BACK
+}
+
+
 
 
 

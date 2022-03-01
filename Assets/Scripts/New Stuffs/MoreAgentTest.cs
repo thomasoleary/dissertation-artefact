@@ -15,7 +15,7 @@ public class MoreAgentTest : MonoBehaviour
     void Awake()
     {
         agent = agentSO.GetInstance();
-        agent.Init(furnitureName);
+        agent.Init(furnitureName, this.gameObject);
     }
 
     void Update()

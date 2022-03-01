@@ -74,6 +74,9 @@ MonoBehaviour:
   - parentType: 0
     sideOnParent: 2
     sideOnAgent: 3
+  - parentType: 0
+    sideOnParent: 3
+    sideOnAgent: 2
   hasFoundParent: 0
   currentParent: {fileID: 0}
   searchIndex: 5
