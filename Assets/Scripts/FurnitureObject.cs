@@ -39,6 +39,8 @@ public class FurnitureObject : ScriptableObject
     /// </summary>
     public AgentState state;
 
+    public Transform agentPlacement;
+
     /// <summary>
     /// The BoxCollider of the Agent
     /// </summary>
@@ -76,13 +78,7 @@ public class FurnitureObject : ScriptableObject
     /// </summary>
     public FurnitureObject currentParent;
 
-    public BoxCollider parentCollider;
-
-    public GameObject parentGObj;
-
-    [Header("Agent State Details")]
-    public int searchIndex = 10;
-
+    public Sides currentParentSide;
     /// <summary>
     /// Returns an instance of the Agent
     /// </summary>
@@ -96,8 +92,25 @@ public class FurnitureObject : ScriptableObject
         this.furnitureName = name;
         this.gameObject = gObj;
         this.boxCollider = gameObject.GetComponent<BoxCollider>();
+
+        if (this.potentialParents.Count() > 1)
+        {
+            System.Random rnd = new System.Random();
+            potentialParents = potentialParents.OrderBy(x => rnd.Next()).ToArray();
+        }
     }
     
+}
+
+/// <summary>
+/// The Agents state
+/// </summary>
+public enum AgentState
+{
+    SEARCH,
+    ARRANGE,
+    REST,
+    SLEEP
 }
 
 /// <summary>
@@ -114,24 +127,16 @@ public struct Sides
     [Range(0.0f, 10.0f)]
     public float distance;
 
-    public Vector3 origin;
-    public Vector3 normal;
-    
-
-    // How much clearance space this distance requires
-    public float clearanceSpace;
-
     // How many children can be placed on the side
     public int spaceForChildren;
 
     // How many current children are placed on the side
     public int currentChildren;
 
-    // If the side has max amount of children
-    public bool hasMaxChildren;
-
     // The layer that the side can raycast
     public LayerMask layers;
+
+    public Transform childPlacement;
 }
 
 
@@ -148,9 +153,6 @@ public struct Parent
     
     // What side on the parent the agent should be placed on
     public AxisDirections sideOnParent;
-
-    // What side the agent should place on the parent
-    public AxisDirections sideOnAgent;
 }
 
 /// <summary>
@@ -165,6 +167,26 @@ public enum AxisDirections
     FORWARD,
     BACK
 }
+
+/// <summary>
+/// The different Types of Furniture
+/// </summary>
+public enum TypeOfFurniture
+{
+    BED,
+    BEDSIDE_CABINET,
+    CHAIR,
+    DESK,
+    DRAWERS,
+    FLOOR,
+    MIRROR,
+    PAINTING,
+    TABLE_LAMP,
+    TV,
+    WALL,
+    WARDROBE
+}
+
 
 
 

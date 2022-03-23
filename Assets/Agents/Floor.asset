@@ -12,20 +12,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99008ebdd092a6546ba5427df633d2bd, type: 3}
   m_Name: Floor
   m_EditorClassIdentifier: 
-  furnitureName: Floor
+  furnitureName: floor
   typeOfFurniture: 5
   state: 3
+  agentPlacement: {fileID: 0}
+  boxCollider: {fileID: 0}
+  gameObject: {fileID: 0}
   sides:
   - axis: 0
-    distance: 0
-    clearanceSpace: 0
-    spaceForChildren: 10
+    distance: 1
+    spaceForChildren: 1
     currentChildren: 0
-    hasMaxChildren: 0
     layers:
       serializedVersion: 2
       m_Bits: 0
+    childPlacement: {fileID: 0}
+  - axis: 1
+    distance: 1
+    spaceForChildren: 0
+    currentChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+    childPlacement: {fileID: 0}
+  - axis: 2
+    distance: 1
+    spaceForChildren: 0
+    currentChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+    childPlacement: {fileID: 0}
+  - axis: 3
+    distance: 1
+    spaceForChildren: 0
+    currentChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+    childPlacement: {fileID: 0}
+  - axis: 4
+    distance: 1
+    spaceForChildren: 0
+    currentChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+    childPlacement: {fileID: 0}
+  - axis: 5
+    distance: 1
+    spaceForChildren: 0
+    currentChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+    childPlacement: {fileID: 0}
   potentialParents: []
   hasFoundParent: 0
   currentParent: {fileID: 0}
-  searchIndex: 0
+  currentParentSide:
+    axis: 0
+    distance: 0
+    spaceForChildren: 0
+    currentChildren: 0
+    layers:
+      serializedVersion: 2
+      m_Bits: 0
+    childPlacement: {fileID: 0}

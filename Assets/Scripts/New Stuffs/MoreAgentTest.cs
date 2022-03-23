@@ -11,15 +11,34 @@ public class MoreAgentTest : MonoBehaviour
     public FurnitureObject agent;
 
     [SerializeField] private AgentManager aManager;
+    [SerializeField] private BoxCollider boxCollider;
+
+    private Vector3[] vectorAxis = new Vector3[6];
+    private Vector3[] transformDirs = new Vector3[6];
+    private float[] axisScale = new float[6];
+
+    private float[] colliderBounds = new float[6];
+
+    Vector3 rayOrigin;
+    Vector3 rayDirection;
 
     void Awake()
     {
         agent = agentSO.GetInstance();
         agent.Init(furnitureName, this.gameObject);
+
+        TryGetComponent(out boxCollider);
+
+        InitialiseDirections();
+        FindTransforms();
+
+        /* if (agent.agentPlacement)
+            Debug.Log(agent.agentPlacement.position); */
     }
 
     void Update()
     {
+        //TestRay();
         AgentMethod(agent.state);
     }
 
@@ -30,36 +49,19 @@ public class MoreAgentTest : MonoBehaviour
             case AgentState.SEARCH:
                 if (Search())
                     agent.state = AgentState.ARRANGE;
-                /* 
-                All agents start in this state
-
-                agent searches for possible parents by examining other agents in the room
-
-                if a possible parent is found
-                    agent examines it's semantics of this potential parent
-                        looking for a suitable side with enough space and places left
-
-                if the possible parent is suitable
-                    agent state changes to ARRANGE
-
-                else
-                    it tries to find another parent
-
-                if no parent can be found, the room is full and the agent is deleted
-                
-                 */
                 break;
             
             case AgentState.ARRANGE:
+                Arrange();
                 agent.state = AgentState.REST;
                 break;
             
             case AgentState.REST:
-                Debug.Log(agent.furnitureName + " is Resting");
+                //Debug.Log(agent.furnitureName + " is Resting");
                 break;
 
             case AgentState.SLEEP:
-                Debug.Log(agent.furnitureName + " is Sleeping");
+                //Debug.Log(agent.furnitureName + " is Sleeping");
                 break;
         }
     }
@@ -69,7 +71,7 @@ public class MoreAgentTest : MonoBehaviour
         // TO-DO
         // Agent needs to be deleted if a potential parent cannot be found
 
-        Debug.Log(agent.furnitureName + " is Searching");
+        //Debug.Log(agent.furnitureName + " is Searching");
 
         for (int i = 0; i < agent.potentialParents.Count(); i++)
         {
@@ -82,8 +84,9 @@ public class MoreAgentTest : MonoBehaviour
                         {
                             fObject.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
                             agent.currentParent = fObject;
+                            agent.currentParentSide = fObject.sides[(int)agent.potentialParents[i].sideOnParent];
                             agent.hasFoundParent = true;
-                            Debug.Log(agent.furnitureName + " has found parent: " + fObject.furnitureName + " " + fObject.sides[(int)agent.potentialParents[i].sideOnParent].axis);
+                            //Debug.Log(agent.furnitureName + " has found parent: " + fObject.furnitureName + " " + fObject.sides[(int)agent.potentialParents[i].sideOnParent].axis);
                             return true;
                         }
                 }
@@ -92,4 +95,90 @@ public class MoreAgentTest : MonoBehaviour
         return false;
     }
 
+    void Arrange()
+    {
+        this.gameObject.transform.position = agent.currentParentSide.childPlacement.position;
+        this.gameObject.transform.rotation = agent.currentParentSide.childPlacement.rotation;
+    }
+
+
+    void TestRay()
+    {
+        for (int i = 0; i < agent.sides.Count(); i++)
+        {
+            Sides currentAgentSide = agent.sides[i];
+
+
+            //rayOrigin = transform.position + transform.TransformDirection(GetAxis(agent.sides[i].axis)) * (GetAxisScale(agent.sides[i].axis) / 2);
+            rayOrigin = (transform.position + agent.boxCollider.center) + transform.TransformDirection(GetAxis(currentAgentSide.axis)) * GetColliderBounds(currentAgentSide.axis);
+            rayDirection = (transform.rotation * GetAxis(currentAgentSide.axis) ) * currentAgentSide.distance;
+            
+            Debug.DrawRay(rayOrigin, rayDirection, Color.red);
+
+            RaycastHit groundHit;
+            if (Physics.Raycast(rayOrigin, rayDirection, out groundHit, currentAgentSide.distance, currentAgentSide.layers))
+            {
+                Debug.DrawRay(rayOrigin, rayDirection, Color.green);
+            }
+        }
+    }
+
+    public void InitialiseDirections()
+    {
+        vectorAxis[0] = Vector3.up;
+        vectorAxis[1] = Vector3.down;
+        vectorAxis[2] = Vector3.forward;
+        vectorAxis[3] = Vector3.back;
+        vectorAxis[4] = Vector3.right;
+        vectorAxis[5] = Vector3.left;
+
+        transformDirs[0] = transform.up;
+        transformDirs[1] = -transform.up;
+        transformDirs[2] = transform.forward;
+        transformDirs[3] = -transform.forward;
+        transformDirs[4] = transform.right;
+        transformDirs[5] = -transform.right;
+
+        axisScale[0] = agent.gameObject.transform.localScale.y;
+        axisScale[1] = agent.gameObject.transform.localScale.y;
+        axisScale[2] = agent.gameObject.transform.localScale.z;
+        axisScale[3] = agent.gameObject.transform.localScale.z;
+        axisScale[4] = agent.gameObject.transform.localScale.x;
+        axisScale[5] = agent.gameObject.transform.localScale.x;
+
+        colliderBounds[0] = agent.boxCollider.bounds.extents.y;
+        colliderBounds[1] = agent.boxCollider.bounds.extents.y;
+        colliderBounds[2] = agent.boxCollider.bounds.extents.z;
+        colliderBounds[3] = agent.boxCollider.bounds.extents.z;
+        colliderBounds[4] = agent.boxCollider.bounds.extents.x;
+        colliderBounds[5] = agent.boxCollider.bounds.extents.x;
+    }
+
+    public Vector3 GetAxis(AxisDirections axis) { return vectorAxis[(int)axis]; }
+    public Vector3 GetTransformDir(AxisDirections axis) { return transformDirs[(int)axis]; }
+    public float GetAxisScale(AxisDirections axis) { return axisScale[(int)axis]; }
+    public float GetColliderBounds(AxisDirections axis) { return colliderBounds[(int)axis];}
+
+
+    void FindTransforms()
+    {
+        agent.agentPlacement = this.transform;
+        foreach (Transform child in transform)
+        {
+            for (int i = 0; i < agent.sides.Count(); i++)
+            {
+                
+                if (agent.sides[i].axis.ToString() == child.name)
+                {
+                    agent.sides[i].childPlacement = child;
+
+                }
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(agent.name + " " + other.name);
+    }
 }
