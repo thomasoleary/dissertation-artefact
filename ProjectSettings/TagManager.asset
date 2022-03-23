@@ -5,12 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - floor
-  - wall1
-  - wall2
-  - wall3
-  - wall4
   - agent
   - find
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -19,7 +16,7 @@ TagManager:
   - Water
   - UI
   - floor
-  - 
+  - agent
   - 
   - 
   - 

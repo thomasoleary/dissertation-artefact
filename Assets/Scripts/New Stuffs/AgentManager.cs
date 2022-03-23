@@ -10,28 +10,24 @@ public class AgentManager : MonoBehaviour
     {
         furnitureInScene.AddRange(GameObject.FindObjectsOfType<FurnitureObject>());
 
-        for (int i = 0; i < furnitureInScene.Count; i++)
-        {
-            FurnitureObject temp = furnitureInScene[i];
-            int randomIndex = Random.Range(i, furnitureInScene.Count);
-            furnitureInScene[i] = furnitureInScene[randomIndex];
-            furnitureInScene[randomIndex] = temp;
-        }
+        Shuffle();
     }
-}
 
-
-static class Utilities
-{
-    public static void ShuffleArray<T> (this System.Random rng, T[] array)
+    public void Shuffle()
     {
-        int n = array.Length;
-        while (n > 1)
+        ShuffleList(furnitureInScene);
+    }
+    private static void ShuffleList<T> (List<T> listToShuffle)
+    {
+        for (int i = 0; i < listToShuffle.Count; i++)
         {
-            int k = rng.Next(n--);
-            T temp = array[n];
-            array[n] = array[k];
-            array[k] = temp;
+            T temp = listToShuffle[i];
+            int randomIndex = Random.Range(i, listToShuffle.Count);
+            listToShuffle[i] = listToShuffle[randomIndex];
+            listToShuffle[randomIndex] = temp;
         }
     }
 }
+
+
+

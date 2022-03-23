@@ -38,7 +38,8 @@ public class MoreAgentTest : MonoBehaviour
 
     void Update()
     {
-        //TestRay();
+        /* if (this.tag == "agent")
+            TestRay(); */
         AgentMethod(agent.state);
     }
 
@@ -83,10 +84,11 @@ public class MoreAgentTest : MonoBehaviour
                         if (fObject.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren < fObject.sides[(int)agent.potentialParents[i].sideOnParent].spaceForChildren)
                         {
                             fObject.sides[(int)agent.potentialParents[i].sideOnParent].currentChildren++;
-                            agent.currentParent = fObject;
+
+                            agent.currentParent = agent.potentialParents[i];
+                            agent.currentParentAgent = fObject;
                             agent.currentParentSide = fObject.sides[(int)agent.potentialParents[i].sideOnParent];
                             agent.hasFoundParent = true;
-                            //Debug.Log(agent.furnitureName + " has found parent: " + fObject.furnitureName + " " + fObject.sides[(int)agent.potentialParents[i].sideOnParent].axis);
                             return true;
                         }
                 }
@@ -108,18 +110,21 @@ public class MoreAgentTest : MonoBehaviour
         {
             Sides currentAgentSide = agent.sides[i];
 
-
             //rayOrigin = transform.position + transform.TransformDirection(GetAxis(agent.sides[i].axis)) * (GetAxisScale(agent.sides[i].axis) / 2);
             rayOrigin = (transform.position + agent.boxCollider.center) + transform.TransformDirection(GetAxis(currentAgentSide.axis)) * GetColliderBounds(currentAgentSide.axis);
-            rayDirection = (transform.rotation * GetAxis(currentAgentSide.axis) ) * currentAgentSide.distance;
-            
-            Debug.DrawRay(rayOrigin, rayDirection, Color.red);
+            rayDirection = (transform.rotation) * GetAxis(currentAgentSide.axis);// * GetAxis(currentAgentSide.axis) ) * currentAgentSide.distance;
+            Gizmos.DrawWireCube(agent.boxCollider.center + rayDirection * currentAgentSide.distance, transform.lossyScale);
+            if (Physics.BoxCast(agent.boxCollider.center, transform.localScale, rayDirection, transform.rotation, currentAgentSide.distance, currentAgentSide.layers))
+            {
 
-            RaycastHit groundHit;
-            if (Physics.Raycast(rayOrigin, rayDirection, out groundHit, currentAgentSide.distance, currentAgentSide.layers))
+            }
+            //Debug.DrawRay(rayOrigin, rayDirection, Color.red);
+
+            //RaycastHit groundHit;
+            /* if (Physics.Raycast(rayOrigin, rayDirection, out groundHit, currentAgentSide.distance, currentAgentSide.layers))
             {
                 Debug.DrawRay(rayOrigin, rayDirection, Color.green);
-            }
+            } */
         }
     }
 
@@ -177,8 +182,21 @@ public class MoreAgentTest : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+   /*  void OnTriggerEnter(Collider other)
     {
-        Debug.Log(agent.name + " " + other.name);
-    }
+        if (other.tag == "agent" && this.tag == "agent")
+        {
+            Debug.Log(agent.name + " is colliding with: " + other.name);
+
+            //agent.currentParent = null;
+            agent.currentParentAgent.sides[(int)agent.currentParent.sideOnParent].currentChildren = 0;
+
+            agent.currentParentAgent = null;
+            agent.hasFoundParent = false;
+
+            aManager.Shuffle();
+
+            agent.state = AgentState.SEARCH;
+        }
+    } */
 }

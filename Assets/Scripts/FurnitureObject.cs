@@ -76,9 +76,12 @@ public class FurnitureObject : ScriptableObject
     /// <summary>
     /// The current parent of the Agent
     /// </summary>
-    public FurnitureObject currentParent;
+    public FurnitureObject currentParentAgent;
 
-    public Sides currentParentSide;
+    [HideInInspector] public Parent currentParent;
+
+    [HideInInspector] public Sides currentParentSide;
+    
     /// <summary>
     /// Returns an instance of the Agent
     /// </summary>
