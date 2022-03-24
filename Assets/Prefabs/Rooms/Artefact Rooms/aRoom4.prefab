@@ -839,7 +839,8 @@ MonoBehaviour:
   furnitureName: Floor 1
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 179960325}
+  boxCollider: {fileID: 0}
 --- !u!1 &1580815466324524787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1271,8 @@ MonoBehaviour:
   furnitureName: Floor 5
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 179960325}
+  boxCollider: {fileID: 0}
 --- !u!1 &2016835448408412577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2222,8 @@ MonoBehaviour:
   furnitureName: Floor 4
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 179960325}
+  boxCollider: {fileID: 0}
 --- !u!1 &4243626381827059769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,7 +2336,8 @@ MonoBehaviour:
   furnitureName: Floor 7
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 179960325}
+  boxCollider: {fileID: 0}
 --- !u!1 &4437387769415665634
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,7 +3672,8 @@ MonoBehaviour:
   furnitureName: Floor 6
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 179960325}
+  boxCollider: {fileID: 0}
 --- !u!1 &7011728851175660896
 GameObject:
   m_ObjectHideFlags: 0
@@ -4333,7 +4338,8 @@ MonoBehaviour:
   furnitureName: Floor 2
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 179960325}
+  boxCollider: {fileID: 0}
 --- !u!1 &7743651539873416264
 GameObject:
   m_ObjectHideFlags: 0
@@ -4543,7 +4549,8 @@ MonoBehaviour:
   furnitureName: Floor 3
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 179960325}
+  boxCollider: {fileID: 0}
 --- !u!1 &8229010507214674250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4664,6 +4671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3195353077532628596}
+  - component: {fileID: 179960325}
   m_Layer: 0
   m_Name: aRoom4
   m_TagString: Untagged
@@ -4689,6 +4697,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &179960325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554915625448791136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1ed0af1e643144a90ab64e1f63ed15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureInScene: []
 --- !u!1 &8731974739555121650
 GameObject:
   m_ObjectHideFlags: 0

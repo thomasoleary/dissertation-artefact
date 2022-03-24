@@ -601,6 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1370669296855168468}
+  - component: {fileID: 815396598}
   m_Layer: 0
   m_Name: aRoom5
   m_TagString: Untagged
@@ -626,6 +627,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &815396598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370669296855168471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1ed0af1e643144a90ab64e1f63ed15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureInScene: []
 --- !u!1 &1370669296890975049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,7 +2335,8 @@ MonoBehaviour:
   furnitureName: Floor 2
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 815396598}
+  boxCollider: {fileID: 0}
 --- !u!1 &2883328593162506594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,7 +2530,8 @@ MonoBehaviour:
   furnitureName: Floor 7
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 815396598}
+  boxCollider: {fileID: 0}
 --- !u!1 &3346448481879436653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,7 +3377,8 @@ MonoBehaviour:
   furnitureName: Floor 6
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 815396598}
+  boxCollider: {fileID: 0}
 --- !u!1 &5165336079614716158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3659,7 +3676,8 @@ MonoBehaviour:
   furnitureName: Floor 5
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 815396598}
+  boxCollider: {fileID: 0}
 --- !u!1 &6173263939222740588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4379,7 +4397,8 @@ MonoBehaviour:
   furnitureName: Floor 4
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 815396598}
+  boxCollider: {fileID: 0}
 --- !u!1 &7937710500745424584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4944,7 +4963,8 @@ MonoBehaviour:
   furnitureName: Floor 1
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 815396598}
+  boxCollider: {fileID: 0}
 --- !u!1 &8469371986234654846
 GameObject:
   m_ObjectHideFlags: 0
@@ -5057,7 +5077,8 @@ MonoBehaviour:
   furnitureName: Floor 3
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
-  aManager: {fileID: 0}
+  aManager: {fileID: 815396598}
+  boxCollider: {fileID: 0}
 --- !u!1 &8632490578743028667
 GameObject:
   m_ObjectHideFlags: 0
