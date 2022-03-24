@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 1370669296855168468}
   - component: {fileID: 815396598}
   m_Layer: 0
-  m_Name: aRoom5
+  m_Name: shell5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
