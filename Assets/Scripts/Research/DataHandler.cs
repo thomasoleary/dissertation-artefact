@@ -1,15 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class DataHandler : MonoBehaviour
 {
-    public Spawner spawner = new Spawner();
+    public Spawner spawner;
+
+    string path = "";
 
     [Header("Study Related Things")]
     public int participantID = 1;
     public int participantStage = 0;
     public int pairID = 0;
     public bool isArtefactLeftSide = false;
+
+    [HideInInspector] public bool isArtefactPicked = false;
 
     [Header("UI Things")]
     public Button aButton;
@@ -22,6 +27,11 @@ public class DataHandler : MonoBehaviour
     public GameObject stage2Screen;
 
     public GameObject finishScreen;
+
+    void Awake()
+    {
+        path = Application.dataPath + "/ResearchData.csv";
+    }
 
     void Start()
     {
@@ -38,18 +48,25 @@ public class DataHandler : MonoBehaviour
         if (index == 0 && isArtefactLeftSide)
         {
             Debug.Log("Artefact was picked");
+            isArtefactPicked = true;
         }
         // B button is picked & isArtefactLeftSide is false
         // Meaning the artefact is on the right side
         else if (index == 1 && !isArtefactLeftSide)
         {
             Debug.Log("Artefact was picked");
+            isArtefactPicked = true;
         }
         // Otherwise the artefact wasn't picked
         else
         {
             Debug.Log("Human was picked");
+            isArtefactPicked = false;
         }
+
+
+        // write to csv before moving on
+        WriteToCSV(participantID, participantStage, spawner.currentPairID, spawner.currentArtefactRoom.name, spawner.currentHumanRoom.name, isArtefactPicked.ToString());
 
         CheckState();
         
@@ -105,5 +122,20 @@ public class DataHandler : MonoBehaviour
         finishScreen.SetActive(false);
         disclaimerScreen.SetActive(true);
 
+    }
+
+    bool firstTime = true;
+    public void WriteToCSV(int partID, int stage, int pair, string aName, string hName, string aPicked)
+    {
+        if (firstTime)
+        {
+            TextWriter tw = new StreamWriter(path, false);
+            tw.WriteLine("PARTICIPANTID, STAGE, PAIRID, ARTEFACTNAME, HUMANNAME, ARTEFACTPICKED");
+            tw.Close();
+            firstTime = false;
+        }
+        TextWriter tw2 = new StreamWriter(path, true);
+        tw2.WriteLine(partID + ", " + stage + ", " + pair + ", " + aName + ", " + hName + ", " + aPicked);
+        tw2.Close();
     }
 }

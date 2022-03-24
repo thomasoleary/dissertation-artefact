@@ -5,14 +5,16 @@ using System.Linq;
 
 public class Spawner : MonoBehaviour
 {
-    public RoomArrays refArrays = new RoomArrays();
+    public RoomArrays refArrays;
 
-    [SerializeField] private List<GameObject> hRooms = new List<GameObject>();
-    [SerializeField] private List<GameObject> aRooms  = new List<GameObject>();
+    [SerializeField] private List<GameObject> hRooms;
+    [SerializeField] private List<GameObject> aRooms;
 
     [Header("Current Rooms")]
     public GameObject currentHumanRoom;
     public GameObject currentArtefactRoom;
+
+    public int currentPairID = 0;
 
     GameObject spawnedHumanRoom;
     GameObject spawnedArtefactRoom;
@@ -34,6 +36,8 @@ public class Spawner : MonoBehaviour
         randomIndex = Random.Range(0, hRooms.Count);
         currentHumanRoom = hRooms[randomIndex];
         currentArtefactRoom = aRooms[randomIndex];
+
+        currentPairID = GetPairID();
 
         hRooms.RemoveAt(randomIndex);
         aRooms.RemoveAt(randomIndex);
@@ -64,6 +68,18 @@ public class Spawner : MonoBehaviour
         Destroy(spawnedHumanRoom);
         Destroy(spawnedArtefactRoom);
         isArtefactLeftSide = false;
+    }
+
+    public int GetPairID()
+    {
+        for (int i = 0; i < refArrays.humanRooms.Count(); i++)
+        {
+            if (currentHumanRoom == refArrays.humanRooms[i])
+            {
+                return i + 1;
+            }
+        }
+        return 0;
     }
 
 }
