@@ -23,6 +23,8 @@ public class FurnitureObject : ScriptableObject
     }
     static readonly ReadOnlyCollection<Sides> defaultSidesValues;
 
+    #region  Variables
+
     [Header("General")]
     /// <summary>
     /// The furnitures name
@@ -39,6 +41,9 @@ public class FurnitureObject : ScriptableObject
     /// </summary>
     public AgentState state;
 
+    /// <summary>
+    /// The placement Transform of the Agent
+    /// </summary>
     public Transform agentPlacement;
 
     /// <summary>
@@ -80,7 +85,12 @@ public class FurnitureObject : ScriptableObject
 
     [HideInInspector] public Parent currentParent;
 
+    /// <summary>
+    /// The side of the Parent that the agent is childed too
+    /// </summary>
     [HideInInspector] public Sides currentParentSide;
+
+    #endregion Variables
     
     /// <summary>
     /// Returns an instance of the Agent
@@ -90,12 +100,17 @@ public class FurnitureObject : ScriptableObject
         return Instantiate(this);
     }
 
+
+    /// <summary>
+    /// Initialises the Agent
+    /// </summary>
     public virtual void Init(string name, GameObject gObj)
     {
         this.furnitureName = name;
         this.gameObject = gObj;
         this.boxCollider = gameObject.GetComponent<BoxCollider>();
 
+        // Randomises the potential parents array
         if (this.potentialParents.Count() > 1)
         {
             System.Random rnd = new System.Random();
