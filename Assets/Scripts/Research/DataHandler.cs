@@ -2,6 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
+/* 
+    File: DataHandler.cs
+    Author: Thomas (Tom) O'Leary
+
+    Summary:
+        This class handles the collection and saving of nearly all data regarding the Research Study.
+ */
+
 public class DataHandler : MonoBehaviour
 {
     #region Variables
