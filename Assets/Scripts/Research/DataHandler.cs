@@ -138,4 +138,9 @@ public class DataHandler : MonoBehaviour
         tw2.WriteLine(partID + ", " + stage + ", " + pair + ", " + aName + ", " + hName + ", " + aPicked);
         tw2.Close();
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
