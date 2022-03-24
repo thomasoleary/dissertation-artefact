@@ -135,6 +135,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8613670060942426822}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &408254090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1827873605925590890, guid: b224918ca4d32c846ab6ed100496cf86,
+    type: 3}
+  m_PrefabInstance: {fileID: 1827873606841217998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &408254091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408254090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureName: Bed
+  agentSO: {fileID: 11400000, guid: 958e4bb958303ce46b4f0458dd14e2af, type: 2}
+  agent: {fileID: 0}
+  aManager: {fileID: 0}
 --- !u!1 &446222431
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,12 +193,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &554280220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8038326196206133340, guid: 0a7c4a854c4967747a42a9c1c8966d9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8038326196003373239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &554280221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554280220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureName: Table Lamp
+  agentSO: {fileID: 11400000, guid: d19bb2cc974f0c34d9a819f83b57b993, type: 2}
+  agent: {fileID: 0}
+  aManager: {fileID: 0}
 --- !u!4 &887808236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8038326196206133339, guid: 0a7c4a854c4967747a42a9c1c8966d9b,
     type: 3}
   m_PrefabInstance: {fileID: 8038326196003373239}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &912992673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8613670061252995781, guid: 58057b5b840896043a27886da4300c4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8613670060942426822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &912992674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912992673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureName: Drawers
+  agentSO: {fileID: 11400000, guid: 672e7f8bd33fd4148a14497d58faca48, type: 2}
+  agent: {fileID: 0}
+  aManager: {fileID: 0}
 --- !u!1 &999739594
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,12 +425,78 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1827873606841217998}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1348062712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1772353079134532130, guid: acb5d66eebfe6a743a457fcff15ec4cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1772353079876941853}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348062713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348062712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureName: Office Chair
+  agentSO: {fileID: 11400000, guid: c1fbad87ac79d674c9aa8c57fa212a42, type: 2}
+  agent: {fileID: 0}
+  aManager: {fileID: 0}
+--- !u!1 &1492090511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6489329164305301465, guid: d2831acd896732744afec7d451e3f96a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6489329164308043765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1492090512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492090511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureName: Desk
+  agentSO: {fileID: 11400000, guid: fb3cd7c42a31a834d9d84b5d245646f3, type: 2}
+  agent: {fileID: 0}
+  aManager: {fileID: 0}
 --- !u!4 &1719437226 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7188308530154657451, guid: da15ee3531472624593f33ef54ebf22a,
     type: 3}
   m_PrefabInstance: {fileID: 7188308529650585857}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1796029923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7188308530154657448, guid: da15ee3531472624593f33ef54ebf22a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7188308529650585857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1796029924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796029923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureName: Wardrobe
+  agentSO: {fileID: 11400000, guid: 303622f20fb0c7f47ab4d06809526b85, type: 2}
+  agent: {fileID: 0}
+  aManager: {fileID: 0}
 --- !u!4 &1824541250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1772353079134532191, guid: acb5d66eebfe6a743a457fcff15ec4cf,
@@ -513,7 +645,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1772353079134532189, guid: acb5d66eebfe6a743a457fcff15ec4cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acb5d66eebfe6a743a457fcff15ec4cf, type: 3}
 --- !u!1001 &1827873606841217998
 PrefabInstance:
@@ -692,7 +825,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1827873605925590891, guid: b224918ca4d32c846ab6ed100496cf86, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b224918ca4d32c846ab6ed100496cf86, type: 3}
 --- !u!1001 &6489329164308043765
 PrefabInstance:
@@ -856,7 +990,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6489329164305301467, guid: d2831acd896732744afec7d451e3f96a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d2831acd896732744afec7d451e3f96a, type: 3}
 --- !u!1001 &7188308529650585857
 PrefabInstance:
@@ -980,7 +1115,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7188308530154657450, guid: da15ee3531472624593f33ef54ebf22a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da15ee3531472624593f33ef54ebf22a, type: 3}
 --- !u!1001 &8038326196003373239
 PrefabInstance:
@@ -1099,7 +1235,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: agent
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8038326196206133338, guid: 0a7c4a854c4967747a42a9c1c8966d9b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a7c4a854c4967747a42a9c1c8966d9b, type: 3}
 --- !u!1001 &8613670060942426822
 PrefabInstance:
@@ -1288,5 +1425,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8613670061252995779, guid: 58057b5b840896043a27886da4300c4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58057b5b840896043a27886da4300c4b, type: 3}

@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 2625999469569205675}
   - component: {fileID: 3660952348547220000}
   - component: {fileID: 2121403644147640167}
-  - component: {fileID: 2902152384945991750}
+  - component: {fileID: 1142262906626206361}
   m_Layer: 0
   m_Name: floor5
   m_TagString: floor
@@ -430,7 +430,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4999998, y: 0.10000009, z: 2.4999998}
   m_Center: {x: 0, y: 0.05000012, z: 0}
---- !u!114 &2902152384945991750
+--- !u!114 &1142262906626206361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,14 +439,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1261357496523193682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: Floor 5
+  furnitureName: floor
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 5557060704467512132}
-  boxCollider: {fileID: 0}
 --- !u!1 &1434041755089141906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1259,7 @@ GameObject:
   - component: {fileID: 4231373743263788041}
   - component: {fileID: 4231373743264788169}
   - component: {fileID: 2450451711648109750}
-  - component: {fileID: 4170539474921220612}
+  - component: {fileID: 8796039320328661131}
   m_Layer: 0
   m_Name: floor1
   m_TagString: floor
@@ -1345,7 +1344,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4999998, y: 0.10000009, z: 2.4999998}
   m_Center: {x: 0, y: 0.05000012, z: 0}
---- !u!114 &4170539474921220612
+--- !u!114 &8796039320328661131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1354,14 +1353,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4231373743262593035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: Floor 1
+  furnitureName: floor
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 5557060704467512132}
-  boxCollider: {fileID: 0}
 --- !u!1 &4231373744493544557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1467,7 @@ GameObject:
   - component: {fileID: 2173002331253882593}
   - component: {fileID: 2421537499719639784}
   - component: {fileID: 8040396514712227234}
-  - component: {fileID: 5492061843078406059}
+  - component: {fileID: 635509309551513012}
   m_Layer: 0
   m_Name: floor2
   m_TagString: floor
@@ -1554,7 +1552,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4999998, y: 0.10000009, z: 2.4999998}
   m_Center: {x: 0, y: 0.05000012, z: 0}
---- !u!114 &5492061843078406059
+--- !u!114 &635509309551513012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1563,14 +1561,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4293390089999746083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: Floor 2
+  furnitureName: floor
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 5557060704467512132}
-  boxCollider: {fileID: 0}
 --- !u!1 &4375443903622200428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,7 +2306,7 @@ GameObject:
   - component: {fileID: 7388849414065931847}
   - component: {fileID: 148308109504617324}
   - component: {fileID: 3265512517712344902}
-  - component: {fileID: 1382229948802168857}
+  - component: {fileID: 2089545705922005177}
   m_Layer: 0
   m_Name: floor4
   m_TagString: floor
@@ -2394,7 +2391,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4999998, y: 0.10000009, z: 2.4999998}
   m_Center: {x: 0, y: 0.05000012, z: 0}
---- !u!114 &1382229948802168857
+--- !u!114 &2089545705922005177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2403,14 +2400,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4726954476170410259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: Floor 4
+  furnitureName: floor
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 5557060704467512132}
-  boxCollider: {fileID: 0}
 --- !u!1 &4844073047002461256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,7 +2958,7 @@ GameObject:
   - component: {fileID: 7025045311833602040}
   - component: {fileID: 3209435787224202179}
   - component: {fileID: 1464830904546084919}
-  - component: {fileID: 2512016987637767382}
+  - component: {fileID: 2730745849948660644}
   m_Layer: 0
   m_Name: floor6
   m_TagString: floor
@@ -3047,7 +3043,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4999998, y: 0.10000009, z: 2.4999998}
   m_Center: {x: 0, y: 0.05000012, z: 0}
---- !u!114 &2512016987637767382
+--- !u!114 &2730745849948660644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3056,14 +3052,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5798029446896782815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: Floor 6
+  furnitureName: floor
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 5557060704467512132}
-  boxCollider: {fileID: 0}
 --- !u!1 &5916288406478484829
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,7 +3167,7 @@ GameObject:
   - component: {fileID: 1208718813313915200}
   - component: {fileID: 8564655252511580672}
   - component: {fileID: 4368243201311728262}
-  - component: {fileID: 6172946124402444592}
+  - component: {fileID: 7194914901732232891}
   m_Layer: 0
   m_Name: floor3
   m_TagString: floor
@@ -3257,7 +3252,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4999998, y: 0.10000009, z: 2.4999998}
   m_Center: {x: 0, y: 0.05000012, z: 0}
---- !u!114 &6172946124402444592
+--- !u!114 &7194914901732232891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3266,14 +3261,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6833373014460111377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a85a790430ee54281a2820ba2bf134, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b0a80b149882d54380bcb5959670f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furnitureName: Floor 3
+  furnitureName: floor
   agentSO: {fileID: 11400000, guid: f1ad4369b749f8d47bf80db9fdf7f123, type: 2}
   agent: {fileID: 0}
   aManager: {fileID: 5557060704467512132}
-  boxCollider: {fileID: 0}
 --- !u!1 &7389156277370569303
 GameObject:
   m_ObjectHideFlags: 0
