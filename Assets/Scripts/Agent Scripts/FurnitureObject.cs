@@ -56,6 +56,8 @@ public class FurnitureObject : ScriptableObject
     /// </summary>
     [HideInInspector] public GameObject gameObject;
 
+    [HideInInspector] public bool isInitialised { get; private set;}
+
     [Header("Agent Sides")]
     /// <summary>
     /// The Agents sides.
@@ -116,6 +118,8 @@ public class FurnitureObject : ScriptableObject
             System.Random rnd = new System.Random();
             potentialParents = potentialParents.OrderBy(x => rnd.Next()).ToArray();
         }
+
+        isInitialised = true;
     }
     
 }

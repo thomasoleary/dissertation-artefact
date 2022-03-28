@@ -9,13 +9,18 @@ namespace Tests
     public class UnitTesting
     {
         private AgentManager agentManager;
-        private Agent agent;
+        private GameObject[] agents;
+
+        private int agentInitCount;
+        private int agentInitAmount;
 
         [SetUp]
         public void SetUp()
         {
             agentManager = GameObject.Find("Room").GetComponent<AgentManager>();
-            agent = GameObject.FindGameObjectWithTag("agent").GetComponent<Agent>();
+            agents = GameObject.FindGameObjectsWithTag("agent");
+
+            agentInitAmount = agents.GetLength(0);
         }
 
 
@@ -28,10 +33,24 @@ namespace Tests
         }
 
         [Test]
-        public void AgentExists()
+        public void AgentsExists()
         {
-            Assert.IsNotNull(agent);
-            Debug.Log(agent);
+            Assert.IsNotNull(agents);
+            Debug.Log(agents);
+        }
+
+        [Test]
+        public void HasAgentInitialised()
+        {
+            foreach (var agent in agents)
+            {
+                if (agent.GetComponent<Agent>().agentSO.isInitialised)
+                {
+                    agentInitCount++;
+                }
+            }
+
+            Assert.IsNotNull(agentInitCount == agentInitAmount);
         }
     }
 
