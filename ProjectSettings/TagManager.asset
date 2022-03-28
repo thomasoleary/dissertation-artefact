@@ -8,6 +8,10 @@ TagManager:
   - agent
   - find
   - Wall
+  - wall2
+  - wall4
+  - wall1
+  - Room
   layers:
   - Default
   - TransparentFX
