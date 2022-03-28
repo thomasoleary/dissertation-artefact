@@ -10,9 +10,6 @@ namespace Tests
     {
         private AgentManager agentManager;
         private GameObject[] agents;
-
-        private int agentInitCount;
-        private int agentPlacementCount;
         private int agentAmount;
 
         [SetUp]
@@ -60,10 +57,9 @@ namespace Tests
             {
                 if (agent.GetComponent<Agent>().agentSO.isInitialised)
                 {
-                    agentInitCount++;
+                    Assert.IsNotNull(agent.GetComponent<Agent>().agentSO.isInitialised);
                 }
             }
-            Assert.IsNotNull(agentInitCount == agentAmount);
         }
 
         // Checks to see if all Agents have placement transform set
