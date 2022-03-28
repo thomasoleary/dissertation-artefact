@@ -12,7 +12,8 @@ namespace Tests
         private GameObject[] agents;
 
         private int agentInitCount;
-        private int agentInitAmount;
+        private int agentPlacementCount;
+        private int agentAmount;
 
         [SetUp]
         public void SetUp()
@@ -20,25 +21,38 @@ namespace Tests
             agentManager = GameObject.Find("Room").GetComponent<AgentManager>();
             agents = GameObject.FindGameObjectsWithTag("agent");
 
-            agentInitAmount = agents.GetLength(0);
+            agentAmount = agents.GetLength(0);
         }
 
 
-        // A Test behaves as an ordinary method
+        // Checks if the AgentManager exists in the scene
         [Test]
         public void AgentManagerExists()
         {
             Assert.IsNotNull(agentManager);
-            Debug.Log(agentManager);
         }
 
+        // Checks if all Agents are in the AgentManager
+        [Test]
+        public void AllAgentsInManager()
+        {
+            var tempManager = new GameObject().AddComponent<AgentManager>();
+
+            if (tempManager.furnitureInScene.Count == agentManager.furnitureInScene.Count)
+            {
+                Assert.IsNotNull(tempManager);
+            }
+        }
+
+
+        // Checks if there are Agents in the scene
         [Test]
         public void AgentsExists()
         {
             Assert.IsNotNull(agents);
-            Debug.Log(agents);
         }
 
+        // Checks to see if the Agents are initialised
         [Test]
         public void HasAgentInitialised()
         {
@@ -49,8 +63,60 @@ namespace Tests
                     agentInitCount++;
                 }
             }
+            Assert.IsNotNull(agentInitCount == agentAmount);
+        }
 
-            Assert.IsNotNull(agentInitCount == agentInitAmount);
+        // Checks to see if all Agents have placement transform set
+        [Test]
+        public void AgentHasPlacement()
+        {
+            foreach(var agent in agents)
+            {
+                if (agent.GetComponent<Agent>().agentSO.agentPlacement)
+                {
+                    Assert.IsNotNull(agent.GetComponent<Agent>().agentSO.agentPlacement);
+                }
+            }
+        }
+
+
+        // Checks to see if Agent is in SEARCH
+        [Test]
+        public void AgentStartInSearch()
+        {
+            foreach(var agent in agents)
+            {
+                if (agent.GetComponent<Agent>().agentSO.state == AgentState.SEARCH)
+                {
+                    Assert.IsNotNull(agent);
+                }
+            }
+        }
+
+        // Checks to see if Agent finds a parent
+        [Test]
+        public void AgentFindsParent()
+        {
+            foreach(var agent in agents)
+            {
+                if(agent.GetComponent<Agent>().agentSO.hasFoundParent)
+                {
+                    Assert.IsNotNull(agent);
+                }
+            }
+        }
+
+        // Checks to see if Agent is in REST
+        [Test]
+        public void AgentEndInRest()
+        {
+            foreach(var agent in agents)
+            {
+                if (agent.GetComponent<Agent>().agentSO.state == AgentState.REST)
+                {
+                    Assert.IsNotNull(agent);
+                }
+            }
         }
     }
 
